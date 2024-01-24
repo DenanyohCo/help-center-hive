@@ -1,1 +1,1 @@
-# HelpCenterHive
+# helpCenterHive
