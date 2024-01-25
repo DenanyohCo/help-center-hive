@@ -62,20 +62,23 @@ export default function Home() {
   ];
   return (
     <>
-      <div className="py-20 mx-auto text-center flex flex-col items-center w-[60rem]">
-        <h1 className="font-bold text-8xl tracking-tight text-gray-950">
-          The Best Help Center Site Examples
+      <div className="container py-20 mx-auto text-center flex flex-col items-center">
+        <h1 className="font-bold text-6xl md:text-8xl tracking-tight text-gray-950">
+          The Best Help Center{" "}
+          <span className="md:block hidden">Site Examples</span>
         </h1>
-        <p className="mt-6 text-2xl max-w-prose text-muted-foreground">
+        <p className="mt-6 md:text-2xl max-w-prose text-muted-foreground">
           Discover a curated set of exceptional help center designs across the
           web.Uncover ideas, trends, and inspirations to transform your help
           center.
         </p>
         <div className="flex flex-row gap-4 mt-6 flex-wrap justify-center">
-          {/* TODO: Render buttons from PayloadCSS */}
           {buttonItems.map((buttonItem, index) => (
             <Link key={index} href={buttonItem.href}>
-              <Button variant={"secondary"} className="bg-[#ede8dd]">
+              <Button
+                variant={"secondary"}
+                className="bg-[#ede8dd] md:text-lg text-xs"
+              >
                 {buttonItem.name.toUpperCase()}{" "}
               </Button>
             </Link>
