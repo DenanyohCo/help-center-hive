@@ -11,9 +11,9 @@ const Navbar = () => {
   return (
     <nav
       aria-label="Main navigation"
-      className="top-0 z-50 mx-auto bg-white  max-w-7xl md:sticky md:top-4"
+      className="container top-0 z-50 mx-auto bg-white  max-w-7xl md:sticky md:top-4"
     >
-      <div className="container flex items-center justify-between py-2">
+      <div className="flex items-center justify-between py-2">
         <div className="flex items-center justify-between w-full">
           <NameLogo />
           <button
