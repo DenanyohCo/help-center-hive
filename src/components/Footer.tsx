@@ -6,10 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="container bg-white my-10">
-      <div className="flex justify-between md:flex-row flex-col">
-        <div className="items-end px-4">
+      <div className="flex justify-between md:flex-row flex-col pb-8 border-b">
+        <div className="items-end">
           <NameLogo />
         </div>
         <div className="flex justify-between">
@@ -35,9 +36,12 @@ const Footer = () => {
             <Link href="/resources" className="text-lg">
               Hire an expert
             </Link>
+            <Link href="/resources" className="text-lg">
+              Privacy Policy
+            </Link>
           </div>
         </div>
-        <div className="flex flex-col justify-start px-4 w-[30rem]">
+        <div className="flex flex-col justify-start px-4 w-[34rem] mt-6 md:mt-0">
           <div className="text-2xl font-bold py-2 text-[#D6D3CC]">
             Subscribe
           </div>
@@ -53,18 +57,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="container flex">
-        <Link href="/" className="pr-4 mr-4">
-          Contact
-        </Link>
-        <Link href="/">Privacy Policy</Link>
-      </div>
-      <div className="py-10 md:flex md:items-center md:justify-between">
+      <div className="py-10">
+        <div className="pt-4 md:flex md:items-center md:justify-between">
         <p className="text-base text-muted-foreground">
-          &copy; 2023 HelpCenter Design. All screenshots &copy; of their
+          &copy; {currentYear} HelpCenter Design. All screenshots &copy; of their
           respective owners.
         </p>
-        <div className="socials flex justify-center items-center sm:justify-end">
+        <div className="socials flex justify-center items-center sm:justify-end mt-3 md:mt-0">
           <div className="text-xl">Follow Us:</div>
           <Link href="/">
             <FaLinkedin className="text-4xl mx-4" />
@@ -73,6 +72,9 @@ const Footer = () => {
             <FaTwitter className="text-4xl" />
           </Link>
         </div>
+
+        </div>
+       
       </div>
     </footer>
   );
@@ -89,7 +91,7 @@ function NameLogo() {
         height="50"
         alt="Help Center Designs Logo"
       />
-      <h1 className="md:text-4xl text-xl">HELP CENTER HIVE</h1>
+      <h1 className="md:text-4xl text-xl">HCD</h1>
     </Link>
   );
 }

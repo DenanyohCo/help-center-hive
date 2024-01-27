@@ -11,9 +11,9 @@ const Navbar = () => {
   return (
     <nav
       aria-label="Main navigation"
-      className="container rounded-md top-0 z-50 mx-auto bg-white  max-w-7xl md:sticky md:top-4"
+      className="container rounded-md top-0 z-50 mx-auto bg-white  md:sticky"
     >
-      <div className="flex items-center justify-between py-2">
+      <div className="flex items-center justify-between py-8">
         <div className="flex items-center justify-between w-full">
           <NameLogo />
           <button
@@ -62,11 +62,11 @@ function NameLogo() {
     <Link href="/" className="flex flex-row items-center justify-center">
       <Image
         src="/HelpCenterDesignsLogo.svg"
-        width="50"
-        height="50"
+        width="45"
+        height="45"
         alt="Help Center Designs Logo"
       />
-      <h1 className="text-4xl">HCD</h1>
+      <h1 className="text-3xl">HCD</h1>
     </Link>
   );
 }
@@ -75,12 +75,12 @@ function DesktopMenu() {
     <div className="relative z-50 hidden flex-row items-center gap-1 py-0 md:flex">
       <div className="ml-auto flex items-center">
         <Button variant={"ghost"} className="p-6 mr-6">
-          <Link className="text-xl font-light" href="/buyCoffee">
+          <Link className="text-base font-bold" href="/buyCoffee">
             Buy me a coffee
           </Link>
         </Button>
         <Button className="p-6">
-          <Link className="text-xl font-light" href="/submitSite">
+          <Link className="text-base font-bold" href="/submitSite">
             Submit a site
           </Link>
         </Button>

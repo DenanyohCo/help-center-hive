@@ -60,18 +60,20 @@ const Hero = () => {
     },
   ];
   return (
-    <>
+    <section className="py-8">
       <div className="container py-20 mx-auto text-center flex flex-col items-center">
-        <h1 className="font-bold text-6xl md:text-8xl tracking-tight text-gray-950">
-          The Best Help Center{" "}
-          <span className="md:block hidden">Site Examples</span>
+        <div className="max-w-5xl mx-auto">
+        <h1 className="font-bold text-5xl md:text-6xl  text-gray-950 tracking-[-.008em] mb-4 ">
+          The Best Help Center Examples
         </h1>
-        <p className="mt-6 md:text-2xl max-w-prose text-muted-foreground">
-          Discover a curated set of exceptional help center designs across the
-          web.Uncover ideas, trends, and inspirations to transform your help
-          center.
+        </div>
+        
+        <div className="max-w-3xl mx-auto">
+        <p className="text-lg max-sm:px-4  text-muted-foreground">
+          Discover curated exceptional help center designs across the web.Uncover ideas, trends, and inspirations to transform your help center.
         </p>
-        <div className="flex flex-row gap-4 mt-6 flex-wrap justify-center">
+        </div>
+        <div className="max-w-5xl flex flex-row gap-4 mt-12 flex-wrap justify-center">
           {buttonItems.map((buttonItem, index) => (
             <Link key={index} href={buttonItem.href}>
               <Button
@@ -84,7 +86,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
-    </>
+    </section>
   );
 };
 export default Hero;
