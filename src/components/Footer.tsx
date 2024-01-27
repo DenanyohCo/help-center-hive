@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 
 const Footer = () => {
   return (
-    <footer className="container bg-white">
+    <footer className="container bg-white my-10">
       <div className="flex justify-between md:flex-row flex-col">
         <div className="items-end px-4">
           <NameLogo />
