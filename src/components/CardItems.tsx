@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import NewsletterCTA from "@/components/NewsletterCTA";
+import { PiArrowSquareOutFill } from "react-icons/pi";
 
 import {
     Card,
@@ -128,23 +129,13 @@ const CardItems = () => {
                             <div className="group relative">
                                 <div className="absolute right-5 top-5 hidden group-hover:block">
                                     <Link
-                                        className="flex h-9 w-9 items-center justify-center rounded-sm bg-[theme(colors.zinc.950/.4)]"
+                                        className="flex h-9 w-9 items-center justify-center rounded-sm bg-[theme(colors.zinc.950/.6)]"
                                         href={item.link}
                                     >
                                         <span className="sr-only">
                                             Visit Website
                                         </span>
-                                        <svg
-                                            width={16}
-                                            height={16}
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="m10.743 6.964-6.071 6.072-1.415-1.415 6.071-6.07H5.086v-2h7.657v7.656h-2V6.964Z"
-                                                fill="#FFF"
-                                                fill-rule="nonzero"
-                                            ></path>
-                                        </svg>
+                                        <PiArrowSquareOutFill className="text-2xl text-white" />
                                     </Link>
                                 </div>
                                 <div className="mb-4 aspect-[4/5]">

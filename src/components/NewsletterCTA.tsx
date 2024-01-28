@@ -19,13 +19,16 @@ const NewsletterCTA = () => {
                         </p>
                     </div>
                     <div className="max-w-full">
-                        <div className="mx-auto flex w-full max-w-lg flex-row items-center justify-start space-x-2">
+                        <div className="flex flex-col items-center md:flex-row md:space-x-2">
                             <Input
                                 className="p-6 text-lg"
                                 type="email"
                                 placeholder="Email"
                             />
-                            <Button type="submit" className="p-6 text-lg">
+                            <Button
+                                type="submit"
+                                className="mt-4 w-full p-6 text-lg md:mt-0 md:w-40"
+                            >
                                 Subscribe
                             </Button>
                         </div>

@@ -13,7 +13,7 @@ const Footer = () => {
                 <div className="items-end">
                     <NameLogo />
                 </div>
-                <div className="flex justify-between">
+                <div className="flex flex-col justify-between sm:flex-row">
                     <div className="flex w-40 flex-col px-4 md:justify-start">
                         <div className="py-2 text-2xl font-bold text-[#D6D3CC]">
                             Pages
@@ -43,7 +43,7 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="mt-6 flex w-[34rem] flex-col justify-start px-4 md:mt-0">
+                <div className="mt-6 flex w-full flex-col justify-start px-4 md:mt-0 md:w-[34rem]">
                     <div className="py-2 text-2xl font-bold text-[#D6D3CC]">
                         Subscribe
                     </div>
@@ -51,13 +51,16 @@ const Footer = () => {
                         Get the best help center design tips and inspiration and
                         idea to provide world class support to your customers.
                     </div>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex flex-col items-center md:flex-row md:space-x-2">
                         <Input
                             className="p-6 text-lg"
                             type="email"
                             placeholder="Email"
                         />
-                        <Button type="submit" className="p-6 text-lg">
+                        <Button
+                            type="submit"
+                            className="mt-4 w-full p-6 text-lg md:mt-0 md:w-40"
+                        >
                             Subscribe
                         </Button>
                     </div>
