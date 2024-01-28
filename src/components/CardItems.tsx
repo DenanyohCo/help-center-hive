@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import NewsletterCTA from "@/components/NewsletterCTA";
+
 import {
   Card,
   CardContent,
@@ -7,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import React from "react";
 
 const CardItems = () => {
   const cardItems = [
@@ -112,44 +115,60 @@ const CardItems = () => {
   ];
   return (
     <section>
-           <div className="container grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-2 lg:grid-cols-3 mb-40">
-      {cardItems.map((item, index) => (
-      <div key={index} className="w-full h-auto">
-        <div className="relative group">
-          <div className="hidden absolute top-5 right-5 group-hover:block">
-            <Link className="flex justify-center items-center w-9 h-9 bg-[theme(colors.zinc.950/.4)] rounded-sm" href={item.link}>
-              <span className="sr-only">Visit Website</span>
-            <svg width={16} height={16} xmlns="http://www.w3.org/2000/svg">
-            <path d="m10.743 6.964-6.071 6.072-1.415-1.415 6.071-6.07H5.086v-2h7.657v7.656h-2V6.964Z" fill="#FFF" fill-rule="nonzero"></path>
-            </svg>
-            </Link>
-          </div>
-          <div className="aspect-[4/5] mb-4">
-            <Card className="h-full bg-white dark:bg-zinc-800 rounded overflow-hidden shadow-sm hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.3)] hover:shadow-black/10 transition duration-300 mb-2">
-              <Link href={item.path}>
-                <CardHeader>
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    width="380"
-                    height="380"
-                    className="max-w-full h-full w-full object-cover object-top"
-                  />
-                </CardHeader>
-              </Link>
-            </Card>
-          </div>
-          <CardContent>
-            <CardTitle>{item.title}</CardTitle>
-            <CardDescription>{item.description}</CardDescription>
-          </CardContent>
-        </div>
+      <div className="container grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-2 lg:grid-cols-3 mb-40">
+        {cardItems.map((item, index) => (
+          <React.Fragment key={index}>
+            {" "}
+            {index === 6 && (
+              <div className="col-span-full row-span-2 my-4">
+                <NewsletterCTA />
+              </div>
+            )}
+            <div className="w-full h-auto">
+              <div className="relative group">
+                <div className="hidden absolute top-5 right-5 group-hover:block">
+                  <Link
+                    className="flex justify-center items-center w-9 h-9 bg-[theme(colors.zinc.950/.4)] rounded-sm"
+                    href={item.link}
+                  >
+                    <span className="sr-only">Visit Website</span>
+                    <svg
+                      width={16}
+                      height={16}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m10.743 6.964-6.071 6.072-1.415-1.415 6.071-6.07H5.086v-2h7.657v7.656h-2V6.964Z"
+                        fill="#FFF"
+                        fill-rule="nonzero"
+                      ></path>
+                    </svg>
+                  </Link>
+                </div>
+                <div className="aspect-[4/5] mb-4">
+                  <Card className="h-full bg-white dark:bg-zinc-800 rounded overflow-hidden shadow-sm hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.3)] hover:shadow-black/10 transition duration-300 mb-2">
+                    <Link href={item.path}>
+                      <CardHeader>
+                        <Image
+                          src={item.img}
+                          alt={item.title}
+                          width="380"
+                          height="380"
+                          className="max-w-full h-full w-full object-cover object-top"
+                        />
+                      </CardHeader>
+                    </Link>
+                  </Card>
+                </div>
+                <CardContent>
+                  <CardTitle>{item.title}</CardTitle>
+                  <CardDescription>{item.description}</CardDescription>
+                </CardContent>
+              </div>
+            </div>
+          </React.Fragment>
+        ))}
       </div>
-       ))}
-      
-        
-     
-    </div>
     </section>
   );
 };
