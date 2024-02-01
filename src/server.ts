@@ -1,5 +1,4 @@
 import express from "express";
-import { getPackedSettings } from "http2";
 import { getPayloadClient } from "./get-payload";
 import { nextApp, nextHandler } from "./next-utils";
 
