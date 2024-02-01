@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { cn } from "@/lib/utils";
 import "./globals.css";
+import Providers from "@/components/Providers";
 
 const fontSans = Open_Sans({
     subsets: ["latin"],
@@ -31,9 +32,11 @@ export default function RootLayout({
                     fontSans.variable
                 )}
             >
-                <Navbar />
-                {children}
-                <Footer />
+                <Providers>
+                    <Navbar />
+                    {children}
+                    <Footer />
+                </Providers>
             </body>
         </html>
     );

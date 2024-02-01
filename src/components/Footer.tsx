@@ -53,13 +53,13 @@ const Footer = () => {
                     </div>
                     <div className="flex flex-col items-center md:flex-row md:space-x-2">
                         <Input
-                            className="p-6 text-lg"
+                            className="max-w-md p-6 text-lg"
                             type="email"
                             placeholder="Email"
                         />
                         <Button
                             type="submit"
-                            className="mt-4 w-full p-6 text-lg md:mt-0 md:w-40"
+                            className="mt-4 w-full max-w-md p-6 text-lg md:mt-0 md:w-40"
                         >
                             Subscribe
                         </Button>

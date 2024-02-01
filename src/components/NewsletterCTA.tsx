@@ -11,7 +11,7 @@ const NewsletterCTA = () => {
                             Get the latest help center and CX inspiration,
                             weekly.
                         </h2>
-                        <p className="text-base">
+                        <p className="text-base text-lg">
                             We are continuingly adding to this list. Sign up to
                             get our weekly analysis and case studies and tips to
                             help you craft the best experiences to support your
@@ -21,13 +21,13 @@ const NewsletterCTA = () => {
                     <div className="max-w-full">
                         <div className="flex flex-col items-center md:flex-row md:space-x-2">
                             <Input
-                                className="p-6 text-lg"
+                                className="max-w-md p-6 text-lg"
                                 type="email"
                                 placeholder="Email"
                             />
                             <Button
                                 type="submit"
-                                className="mt-4 w-full p-6 text-lg md:mt-0 md:w-40"
+                                className="mt-4 w-full max-w-md p-6 text-lg md:mt-0 md:w-40"
                             >
                                 Subscribe
                             </Button>
