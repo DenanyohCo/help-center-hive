@@ -90,7 +90,7 @@ function NameLogo() {
     return (
         <Link
             href="/"
-            className="flex flex-row items-center justify-start md:justify-center"
+            className="flex flex-row items-center justify-start p-2 md:justify-center"
         >
             <Image
                 src="/HelpCenterDesignsLogo.svg"

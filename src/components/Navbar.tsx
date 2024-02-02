@@ -13,7 +13,7 @@ const Navbar = () => {
             aria-label="Main navigation"
             className="container top-0 z-50 mx-auto rounded-md bg-white  md:sticky"
         >
-            <div className="flex items-center justify-between py-8">
+            <div className="flex items-center justify-between py-4">
                 <div className="flex w-full items-center justify-between">
                     <NameLogo />
                     <button
