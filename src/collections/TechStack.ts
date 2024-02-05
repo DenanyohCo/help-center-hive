@@ -2,6 +2,9 @@ import { Collection, CollectionConfig } from "payload/types";
 
 export const TechStack: CollectionConfig = {
     slug: "tech-stack",
+    admin: {
+        useAsTitle: "name",
+    },
     fields: [
         {
             name: "name",

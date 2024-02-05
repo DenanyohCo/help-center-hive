@@ -2,6 +2,9 @@ import { Collection, CollectionConfig } from "payload/types";
 
 export const Sites: CollectionConfig = {
     slug: "sites",
+    admin: {
+        useAsTitle: "name",
+    },
     fields: [
         {
             name: "name",
@@ -16,14 +19,16 @@ export const Sites: CollectionConfig = {
             required: true,
         },
         {
-            name: "headline",
-            label: "Headline",
+            name: "heading",
+            label: "Heading",
             type: "text",
+            required: true,
         },
         {
             name: "description",
             label: "Description",
             type: "textarea",
+            required: true,
         },
         {
             name: "image",
@@ -36,12 +41,14 @@ export const Sites: CollectionConfig = {
             label: "Category",
             type: "relationship",
             relationTo: "category",
+            hasMany: true,
         },
         {
             name: "tech_stack",
             label: "Tech Stack",
             type: "relationship",
             relationTo: "tech-stack",
+            hasMany: true,
         },
         {
             name: "is_featured",
