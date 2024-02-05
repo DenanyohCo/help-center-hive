@@ -7,123 +7,122 @@
  */
 
 export interface Config {
-  collections: {
-    sites: Site;
-    category: Category;
-    'tech-stack': TechStack;
-    media: Media;
-    users: User;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
-  };
-  globals: {};
+    collections: {
+        sites: Site;
+        category: Category;
+        "tech-stack": TechStack;
+        media: Media;
+        users: User;
+        "payload-preferences": PayloadPreference;
+        "payload-migrations": PayloadMigration;
+    };
+    globals: {};
 }
 export interface Site {
-  id: string;
-  name: string;
-  url: string;
-  heading: string;
-  description: string;
-  image: string | Media;
-  category?: (string | Category)[] | null;
-  tech_stack?: (string | TechStack)[] | null;
-  is_featured?: boolean | null;
-  updatedAt: string;
-  createdAt: string;
+    id: string;
+    name: string;
+    url: string;
+    heading: string;
+    description: string;
+    image: string | Media;
+    category?: (string | Category)[] | null;
+    tech_stack?: (string | TechStack)[] | null;
+    is_featured?: boolean | null;
+    updatedAt: string;
+    createdAt: string;
 }
 export interface Media {
-  id: string;
-  alt?: string | null;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  sizes?: {
-    thumbnail?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
+    id: string;
+    alt?: string | null;
+    updatedAt: string;
+    createdAt: string;
+    url?: string | null;
+    filename?: string | null;
+    mimeType?: string | null;
+    filesize?: number | null;
+    width?: number | null;
+    height?: number | null;
+    sizes?: {
+        thumbnail?: {
+            url?: string | null;
+            width?: number | null;
+            height?: number | null;
+            mimeType?: string | null;
+            filesize?: number | null;
+            filename?: string | null;
+        };
+        card?: {
+            url?: string | null;
+            width?: number | null;
+            height?: number | null;
+            mimeType?: string | null;
+            filesize?: number | null;
+            filename?: string | null;
+        };
+        tablet?: {
+            url?: string | null;
+            width?: number | null;
+            height?: number | null;
+            mimeType?: string | null;
+            filesize?: number | null;
+            filename?: string | null;
+        };
     };
-    card?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    tablet?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-  };
 }
 export interface Category {
-  id: string;
-  name: string;
-  description?: string | null;
-  updatedAt: string;
-  createdAt: string;
+    id: string;
+    name: string;
+    description?: string | null;
+    updatedAt: string;
+    createdAt: string;
 }
 export interface TechStack {
-  id: string;
-  name: string;
-  description?: string | null;
-  updatedAt: string;
-  createdAt: string;
+    id: string;
+    name: string;
+    description?: string | null;
+    updatedAt: string;
+    createdAt: string;
 }
 export interface User {
-  id: string;
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  password: string | null;
+    id: string;
+    updatedAt: string;
+    createdAt: string;
+    email: string;
+    resetPasswordToken?: string | null;
+    resetPasswordExpiration?: string | null;
+    salt?: string | null;
+    hash?: string | null;
+    loginAttempts?: number | null;
+    lockUntil?: string | null;
+    password: string | null;
 }
 export interface PayloadPreference {
-  id: string;
-  user: {
-    relationTo: 'users';
-    value: string | User;
-  };
-  key?: string | null;
-  value?:
-    | {
-        [k: string]: unknown;
-      }
-    | unknown[]
-    | string
-    | number
-    | boolean
-    | null;
-  updatedAt: string;
-  createdAt: string;
+    id: string;
+    user: {
+        relationTo: "users";
+        value: string | User;
+    };
+    key?: string | null;
+    value?:
+        | {
+              [k: string]: unknown;
+          }
+        | unknown[]
+        | string
+        | number
+        | boolean
+        | null;
+    updatedAt: string;
+    createdAt: string;
 }
 export interface PayloadMigration {
-  id: string;
-  name?: string | null;
-  batch?: number | null;
-  updatedAt: string;
-  createdAt: string;
+    id: string;
+    name?: string | null;
+    batch?: number | null;
+    updatedAt: string;
+    createdAt: string;
 }
 
-
-declare module 'payload' {
-  export interface GeneratedTypes extends Config {}
+declare module "payload" {
+    export interface GeneratedTypes extends Config {}
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import { PiArrowSquareOutFill } from "react-icons/pi";
+
 import {
     Card,
     CardContent,
