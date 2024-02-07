@@ -16,6 +16,12 @@ export const Category: CollectionConfig = {
             required: true,
         },
         {
+            name: "slug",
+            label: "Slug",
+            type: "text",
+            required: true,
+        },
+        {
             name: "description",
             label: "Description",
             type: "textarea",

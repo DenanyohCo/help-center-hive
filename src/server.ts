@@ -24,6 +24,14 @@ const start = async () => {
 
         res.json(sites);
     });
+    app.get("/api/categories", async (req, res) => {
+        const categories = await payload.find({
+            collection: "category",
+            depth: 1,
+        });
+
+        res.json(categories);
+    });
     app.use("/api", (req, res) => {
         // Your API logic here
         res.json({ message: "Hello from API!" });
