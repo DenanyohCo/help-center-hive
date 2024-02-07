@@ -11,6 +11,7 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import React from "react";
+import { trpc } from "@/trpc/client";
 
 const CardItems = () => {
     const cardItems = [
@@ -114,6 +115,11 @@ const CardItems = () => {
             path: "/{slug}",
         },
     ];
+
+    const {} = trpc.getAllWebsites.useInfiniteQuery({
+        limit: 12,
+        query: {},
+    });
     return (
         <section>
             <div className="container mb-40 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">

@@ -5,10 +5,17 @@ export const Sites: CollectionConfig = {
     admin: {
         useAsTitle: "name",
     },
+    access: () => true,
     fields: [
         {
             name: "name",
             label: "Name",
+            type: "text",
+            required: true,
+        },
+        {
+            name: "slug",
+            label: "Slug",
             type: "text",
             required: true,
         },

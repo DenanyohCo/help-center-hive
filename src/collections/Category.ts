@@ -5,6 +5,7 @@ export const Category: CollectionConfig = {
     admin: {
         useAsTitle: "name",
     },
+    access: () => true,
     fields: [
         {
             name: "name",
