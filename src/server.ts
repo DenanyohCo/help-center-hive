@@ -1,18 +1,10 @@
 import express from "express";
 import { getPayloadClient } from "./get-payload";
 import { nextApp, nextHandler } from "./next-utils";
-import * as trpcExpress from "@trpc/server/adapters/express";
-import { appRouter } from "./trpc";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
-const createContext = ({
-    req,
-    res,
-}: trpcExpress.CreateExpressContextOptions) => ({
-    req,
-    res,
-});
+
 const start = async () => {
     const payload = await getPayloadClient({
         initOptions: {
@@ -22,14 +14,23 @@ const start = async () => {
             },
         },
     });
-    app.use(
-        "/api/trpc",
-        trpcExpress.createExpressMiddleware({
-            router: appRouter,
-            createContext,
-        })
-    );
+
+    // Define your API routes here using Express.js
+    app.get("/api/sites", async (req, res) => {
+        const sites = await payload.find({
+            collection: "sites",
+            depth: 1,
+        });
+
+        res.json(sites);
+    });
+    app.use("/api", (req, res) => {
+        // Your API logic here
+        res.json({ message: "Hello from API!" });
+    });
+
     app.use((req, res) => nextHandler(req, res));
+
     nextApp.prepare().then(() => {
         payload.logger.info(`Next app started`);
         app.listen(PORT, () => {
@@ -39,4 +40,5 @@ const start = async () => {
         });
     });
 };
+
 start();

@@ -5,7 +5,9 @@ export const Sites: CollectionConfig = {
     admin: {
         useAsTitle: "name",
     },
-    access: () => true,
+    access: {
+        read: () => true, 
+    },
     fields: [
         {
             name: "name",
