@@ -25,7 +25,7 @@ export interface Config {
 export interface Site {
   id: string;
   name: string;
-  slug: string;
+  path: string;
   url: string;
   heading: string;
   description: string;

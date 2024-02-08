@@ -27,6 +27,7 @@
         "express": "^4.18.2",
         "lucide-react": "^0.314.0",
         "next": "14.1.0",
+        "next-navigation": "^1.0.6",
         "payload": "^2.9.0",
         "react": "^18",
         "react-dom": "^18",

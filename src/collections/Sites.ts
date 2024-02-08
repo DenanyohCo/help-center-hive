@@ -6,7 +6,7 @@ export const Sites: CollectionConfig = {
         useAsTitle: "name",
     },
     access: {
-        read: () => true, 
+        read: () => true,
     },
     fields: [
         {
@@ -16,8 +16,8 @@ export const Sites: CollectionConfig = {
             required: true,
         },
         {
-            name: "slug",
-            label: "Slug",
+            name: "path",
+            label: "Path",
             type: "text",
             required: true,
         },

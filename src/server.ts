@@ -21,7 +21,6 @@ const start = async () => {
             collection: "sites",
             depth: 1,
         });
-
         res.json(sites);
     });
     app.get("/api/categories", async (req, res) => {
@@ -32,11 +31,6 @@ const start = async () => {
 
         res.json(categories);
     });
-    app.use("/api", (req, res) => {
-        // Your API logic here
-        res.json({ message: "Hello from API!" });
-    });
-
     app.use((req, res) => nextHandler(req, res));
 
     nextApp.prepare().then(() => {

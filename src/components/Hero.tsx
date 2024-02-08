@@ -9,64 +9,6 @@ const Hero = () => {
         axios.get('/api/categories').then((res) => res.data)
     );
     const buttonItems: Category[] = categories?.docs || [];
-    // const buttonItems = [
-    //     {
-    //         name: "social",
-    //         href: "/social",
-    //     },
-    //     {
-    //         name: "finance",
-    //         href: "/finance",
-    //     },
-    //     {
-    //         name: "consumer products",
-    //         href: "/consumer-products",
-    //     },
-    //     {
-    //         name: "home services",
-    //         href: "/home-services",
-    //     },
-    //     {
-    //         name: "media",
-    //         href: "/media",
-    //     },
-    //     {
-    //         name: "entertainment",
-    //         href: "/entertainment",
-    //     },
-    //     {
-    //         name: "tech",
-    //         href: "/tech",
-    //     },
-    //     {
-    //         name: "crm",
-    //         href: "/crm",
-    //     },
-    //     {
-    //         name: "travel",
-    //         href: "/travel",
-    //     },
-    //     {
-    //         name: "education",
-    //         href: "/education",
-    //     },
-    //     {
-    //         name: "app",
-    //         href: "/app",
-    //     },
-    //     {
-    //         name: "ecommerce",
-    //         href: "/ecommerce",
-    //     },
-    //     {
-    //         name: "health",
-    //         href: "/health",
-    //     },
-    //     {
-    //         name: "saas",
-    //         href: "/saas",
-    //     },
-    // ];
     return (
         <section className="py-8">
             <div className="container mx-auto flex flex-col items-center py-20 text-center">

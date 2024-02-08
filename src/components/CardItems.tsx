@@ -24,6 +24,7 @@ const CardItems = () => {
         <section>
             <div className="container mb-40 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
                 {cardItems.map((item, index) => (
+                    item.is_featured &&
                     <React.Fragment key={index}>
                         {index === 6 && (
                             <div className="col-span-full row-span-2 my-4">
@@ -45,7 +46,7 @@ const CardItems = () => {
                                 </div>
                                 <div className="mb-4 aspect-[4/5]">
                                     <Card className="mb-2 h-full overflow-hidden rounded bg-white shadow-sm transition duration-300 hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.3)] hover:shadow-black/10 dark:bg-zinc-800">
-                                        <Link href={`/${item.slug}`}>
+                                        <Link href={`sites/${item.path}`}>
                                             <CardHeader>
                                                 <Image
                                                     src={(item.image as Media)?.url ?? ''}
