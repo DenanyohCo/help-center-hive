@@ -14,8 +14,6 @@ const start = async () => {
             },
         },
     });
-
-    // Define your API routes here using Express.js
     app.get("/api/sites", async (req, res) => {
         const sites = await payload.find({
             collection: "sites",
