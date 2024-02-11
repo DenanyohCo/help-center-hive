@@ -28,7 +28,6 @@ const start = async () => {
             collection: "category",
             depth: 1,
         });
-
         res.json(categories);
     });
     app.use((req, res) => nextHandler(req, res));

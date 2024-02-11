@@ -11,7 +11,7 @@ const NewsletterCTA = () => {
                             Get the latest help center and CX inspiration,
                             weekly.
                         </h2>
-                        <p className="text-base text-lg">
+                        <p className="text-lg">
                             We are continuingly adding to this list. Sign up to
                             get our weekly analysis and case studies and tips to
                             help you craft the best experiences to support your
