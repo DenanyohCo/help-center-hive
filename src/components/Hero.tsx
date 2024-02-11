@@ -1,12 +1,16 @@
-"use client"
-import { Category } from '../payload-types';
+"use client";
+import { Category } from "../payload-types";
 import { Button } from "@/components/ui/button";
-import { useQuery } from 'react-query';
-import axios from 'axios';
+import { useQuery } from "react-query";
+import axios from "axios";
 import Link from "next/link";
 const Hero = () => {
-    const { data: categories, isLoading, error } = useQuery('category', () =>
-        axios.get('/api/categories').then((res) => res.data)
+    const {
+        data: categories,
+        isLoading,
+        error,
+    } = useQuery("category", () =>
+        axios.get("/api/categories").then((res) => res.data)
     );
     const buttonItems: Category[] = categories?.docs || [];
     return (
@@ -27,8 +31,7 @@ const Hero = () => {
                 </div>
                 <div className="mt-12 flex max-w-5xl flex-row flex-wrap justify-center gap-4">
                     {buttonItems.map((buttonItem, index) => (
-                        <Link key={index} href={`/${buttonItem.name}`}
-                        >
+                        <Link key={index} href={`/${buttonItem.name}`}>
                             <Button
                                 variant={"secondary"}
                                 className="bg-[#ede8dd] text-xs md:text-lg"

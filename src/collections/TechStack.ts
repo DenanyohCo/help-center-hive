@@ -6,7 +6,7 @@ export const TechStack: CollectionConfig = {
         useAsTitle: "name",
     },
     access: {
-        read: () => true, 
+        read: () => true,
     },
     fields: [
         {

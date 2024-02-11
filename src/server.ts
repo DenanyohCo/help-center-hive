@@ -20,6 +20,7 @@ const start = async () => {
         const sites = await payload.find({
             collection: "sites",
             depth: 1,
+            limit: 100,
         });
         res.json(sites);
     });
@@ -27,6 +28,7 @@ const start = async () => {
         const categories = await payload.find({
             collection: "category",
             depth: 1,
+            limit: 100,
         });
         res.json(categories);
     });
