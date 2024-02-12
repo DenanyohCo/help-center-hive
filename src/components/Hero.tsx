@@ -31,7 +31,7 @@ const Hero = () => {
                 </div>
                 <div className="mt-12 flex max-w-5xl flex-row flex-wrap justify-center gap-4">
                     {buttonItems.map((buttonItem, index) => (
-                        <Link key={index} href={`/${buttonItem.name}`}>
+                        <Link key={index} href={`categories/${buttonItem.name}`}>
                             <Button
                                 variant={"secondary"}
                                 className="bg-[#ede8dd] text-xs md:text-lg"

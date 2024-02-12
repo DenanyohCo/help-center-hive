@@ -14,7 +14,7 @@ const start = async () => {
             },
         },
     });
-    app.get("/api/sites", async (req, res) => {
+    app.get("/api/websites", async (req, res) => {
         const sites = await payload.find({
             collection: "sites",
             depth: 1,

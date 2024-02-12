@@ -1,11 +1,13 @@
-"use client";
-import { Site, Media } from "../payload-types";
+"use client"
+import { usePathname } from "next/navigation";
+import { Site, Media, Category } from "../../../payload-types";
 import { useQuery } from "react-query";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import NewsletterCTA from "@/components/NewsletterCTA";
 import { PiArrowSquareOutFill } from "react-icons/pi";
+import { Button } from "@/components/ui/button";
 import {
     Card,
     CardContent,
@@ -14,24 +16,52 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 import React from "react";
-
-const CardItems = () => {
+const CategoryPage = () => {
+    const pathName = usePathname();
+    const path = pathName.split("/").pop();
     const {
         data: sites,
-        isLoading,
-        error,
     } = useQuery("sites", () =>
-        axios.get("/api/websites").then((res) => res.data)
+        axios.get(`/api/websites`).then((res) => res.data)
     );
-    // console.log(sites);
-    const cardItems: Site[] = sites?.docs || [];
-    // while (sites?.page == sites?.titalPage) {
-    //     console.log(sites?.docs);
-    //     sites.pagingCounter++;
-    // }
+    let cardItems: any[] = [];
+    sites?.docs.forEach((item: Site) => {
+        item.category?.forEach((e: any) => {
+            if (path === e.name) {
+                cardItems.push(item);
+            }
+        })
+    })
+    const {
+        data: categories,
+    } = useQuery("category", () =>
+        axios.get("/api/categories").then((res) => res.data)
+    );
+    const buttonItems: Category[] = categories?.docs.filter((category: Category) => category.name !== path) || [];
     return (
-        <section>
-            <div className="container mb-40 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+        <section className="container">
+            <div className="mt-6 mx-auto flex flex-col items-center py-20 text-center">
+                <div className="mx-auto max-w-5xl">
+                    <h1 className="mb-4 text-4xl font-bold  tracking-[-.008em] text-gray-950 md:text-6xl flex-wrap">
+                        The Best
+                        {` ${path?.replace('%20', " ")} `}
+                        Help Center Site Examples
+                    </h1>
+                </div>
+            </div>
+            <div className="mt-6 flex max-w-5xl flex-row flex-wrap justify-center gap-4 mb-10 pb-10">
+                {buttonItems.map((buttonItem, index) => (
+                    <Link key={index} href={`${buttonItem.name}`}>
+                        <Button
+                            variant={"secondary"}
+                            className="bg-[#ede8dd] text-xs md:text-lg"
+                        >
+                            {buttonItem.name.toUpperCase()}{" "}
+                        </Button>
+                    </Link>
+                ))}
+            </div>
+            <div className="mb-40 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
                 {cardItems.map(
                     (item, index) =>
                         item.is_featured && (
@@ -139,7 +169,7 @@ const CardItems = () => {
                 )}
             </div>
         </section>
-    );
+    )
 };
 
-export default CardItems;
+export default CategoryPage;
