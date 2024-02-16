@@ -84,6 +84,7 @@ const SitePage = () => {
                 </div>
                 <div className="my-4 mr-4 w-auto border-2">
                     <Image
+                        unoptimized
                         src={(site?.image as Media)?.url ?? ""}
                         alt={site?.name}
                         width="1500"
@@ -117,6 +118,7 @@ const SitePage = () => {
                                             <Link href={`${item.path}`}>
                                                 <CardHeader>
                                                     <Image
+                                                        unoptimized
                                                         src={
                                                             (
                                                                 item.image as Media

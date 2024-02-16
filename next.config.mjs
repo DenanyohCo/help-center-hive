@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['localhost', 'tests-production-0ce4.up.railway.app'],
+        unoptimized: true,
+        domains: ['localhost'],
+        loader: 'imgix',
+        path: './media',
     },
 };
 

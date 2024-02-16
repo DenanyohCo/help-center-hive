@@ -67,6 +67,7 @@ function NameLogo() {
     return (
         <Link href="/" className="flex flex-row items-center justify-center">
             <Image
+                unoptimized
                 src="/HelpCenterDesignsLogo.svg"
                 width="45"
                 height="45"

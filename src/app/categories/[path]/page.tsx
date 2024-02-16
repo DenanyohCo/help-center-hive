@@ -83,6 +83,7 @@ const CategoryPage = () => {
                                             <Link href={`/sites/${item.path}`}>
                                                 <CardHeader>
                                                     <Image
+                                                        unoptimized
                                                         src={
                                                             (
                                                                 item.image as Media

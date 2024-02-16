@@ -54,6 +54,7 @@ const CardItems = () => {
                                                 <Link href={`sites/${item.path}`}>
                                                     <CardHeader>
                                                         <Image
+                                                        unoptimized
                                                             src={
                                                                 (
                                                                     item.image as Media
@@ -108,6 +109,7 @@ const CardItems = () => {
                                                 <Link href={`sites/${item.path}`}>
                                                     <CardHeader>
                                                         <Image
+                                                        unoptimized
                                                             src={
                                                                 (
                                                                     item.image as Media
