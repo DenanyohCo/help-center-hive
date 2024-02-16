@@ -80,7 +80,7 @@ const CategoryPage = () => {
                                     </div>
                                     <div className="mb-4 aspect-[4/5]">
                                         <Card className="mb-2 h-full overflow-hidden rounded bg-white shadow-sm transition duration-300 hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.3)] hover:shadow-black/10 dark:bg-zinc-800">
-                                            <Link href={`sites/${item.path}`}>
+                                            <Link href={`/sites/${item.path}`}>
                                                 <CardHeader>
                                                     <Image
                                                         src={
