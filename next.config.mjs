@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
     unoptimized: true,
-    domains: ['localhost', {vercel.app}],
+    domains: ['localhost', {vercel.app, railway.app}],
     loader: 'imgix',
     path: './media',
     },
