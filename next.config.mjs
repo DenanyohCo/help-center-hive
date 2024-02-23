@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
         unoptimized: true,
-        domains: ['localhost', 'help-center-hive-production.up.railway.app'],
+        domains: ['localhost', 'www.helpcenter.design'],
         loader: 'imgix',
         path: './media',
     },
