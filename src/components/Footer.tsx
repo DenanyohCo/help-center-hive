@@ -18,7 +18,7 @@ const Footer = () => {
                         <div className="py-2 text-2xl font-bold text-[#D6D3CC]">
                             Pages
                         </div>
-                        <Link href="/template" className="text-lg">
+                        <Link href="/" className="text-lg">
                             Template
                         </Link>
                         <Link href="/about" className="text-lg">
@@ -38,7 +38,7 @@ const Footer = () => {
                         <Link href="/resources" className="text-lg">
                             Hire an expert
                         </Link>
-                        <Link href="/resources" className="text-lg">
+                        <Link href="/privacy" className="text-lg">
                             Privacy Policy
                         </Link>
                     </div>
