@@ -43,7 +43,8 @@ const Navbar = () => {
                         <Button variant={"ghost"} className="p-6">
                             <Link
                                 className="w-full text-xl font-light"
-                                href="/buyCoffee"
+                                href="https://www.buymeacoffee.com/mrdenanyoh"
+                                target="_blank"
                             >
                                 Buy me a coffee
                             </Link>
@@ -51,7 +52,7 @@ const Navbar = () => {
                         <Button className="w-full p-6">
                             <Link
                                 className="text-xl font-light"
-                                href="/submitSite"
+                                href="/submit"
                             >
                                 Submit a site
                             </Link>
@@ -82,12 +83,12 @@ function DesktopMenu() {
         <div className="relative z-50 hidden flex-row items-center gap-1 py-0 md:flex">
             <div className="ml-auto flex items-center">
                 <Button variant={"ghost"} className="mr-6 p-6">
-                    <Link className="text-base font-bold" href="/buyCoffee">
+                    <Link className="text-base font-bold" href="https://www.buymeacoffee.com/mrdenanyoh" target="_blank">
                         Buy me a coffee
                     </Link>
                 </Button>
                 <Button className="p-6">
-                    <Link className="text-base font-bold" href="/submitSite">
+                    <Link className="text-base font-bold" href="/submit">
                         Submit a site
                     </Link>
                 </Button>

@@ -19,6 +19,7 @@
     "dependencies": {
         "@payloadcms/bundler-webpack": "^1.0.6",
         "@payloadcms/db-mongodb": "^1.4.0",
+        "@payloadcms/plugin-form-builder": "^1.2.1",
         "@payloadcms/richtext-slate": "^1.4.0",
         "@radix-ui/react-hover-card": "^1.0.7",
         "@radix-ui/react-slot": "^1.0.2",

@@ -28,6 +28,30 @@ const start = async () => {
 
         return;
     }
+    app.post("/api/contact", async (req, res) => {
+        const { data, errors } = await payload.create({
+            collection: 'contact-form',
+            data: req.body,
+        });
+        if (errors) {
+            res.status(400).json({ errors });
+        } else {
+            res.status(200).json({ data });
+        }
+    });
+
+    app.post("/api/submit", async (req, res) => {
+        const { data, errors } = await payload.create({
+            collection: 'submit-site',
+            data: req.body,
+        });
+        if (errors) {
+            res.status(400).json({ errors });
+        } else {
+            res.status(200).json({ data });
+        }
+    });
+
     app.get("/api/websites", async (req, res) => {
         const sites = await payload.find({
             collection: "sites",
