@@ -43,18 +43,18 @@ const ContactForm = () => {
                         <div className="grid gap-6">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700">Your name*</label>
-                                <Input name="name" value={formState.name} onChange={handleChange} required placeholder="Your name" className="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+                                <Input name="name" value={formState.name} onChange={handleChange} required placeholder="Your name" className="mt-1 block w-full px-3 py-2" />
                             </div>
                             <div>
                                 <label htmlFor="email" className="block text-sm font-semibold text-gray-700">Email*</label>
-                                <Input name="email" value={formState.email} onChange={handleChange} required placeholder="example@email.com" className="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" />
+                                <Input name="email" value={formState.email} onChange={handleChange} required placeholder="example@email.com" className="mt-1 block w-full px-3 py-2" />
                             </div>
                             <div>
                                 <label htmlFor="message" className="block text-sm font-semibold text-gray-700">Your message*</label>
-                                <Textarea name="message" value={formState.message} onChange={handleChange} required placeholder="Enter your message" className="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" rows={4} />
+                                <Textarea name="message" value={formState.message} onChange={handleChange} required placeholder="Enter your message" className="mt-1 block w-full px-3 py-2" />
                             </div>
                             <div>
-                                <Button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Submit</Button>
+                                <Button type="submit" className="w-full flex justify-center py-2 px-4">Submit</Button>
                             </div>
                         </div>
                     </form>
