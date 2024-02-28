@@ -11,7 +11,6 @@ import { SubmitSite } from "./collections/SubmitSite";
 
 import dotenv from "dotenv";
 import path from "path";
-import FormBuilder from "@payloadcms/plugin-form-builder";
 dotenv.config({
     path: path.resolve(__dirname, "../.env"),
 });
