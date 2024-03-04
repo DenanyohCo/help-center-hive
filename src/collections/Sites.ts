@@ -1,4 +1,5 @@
 import { Collection, CollectionConfig } from "payload/types";
+import seo from '@payloadcms/plugin-seo';
 
 export const Sites: CollectionConfig = {
     slug: "sites",
@@ -66,6 +67,5 @@ export const Sites: CollectionConfig = {
             name: "is_featured",
             label: "Is Featured",
             type: "checkbox",
-        },
-    ],
+        }],
 } as CollectionConfig;

@@ -8,7 +8,13 @@ import { TechStack } from "./collections/TechStack";
 import { Media } from "./collections/Media";
 import { ContactForm } from "./collections/ContactForm";
 import { SubmitSite } from "./collections/SubmitSite";
-
+import {
+    PluginConfig,
+    GenerateTitle,
+    GenerateDescription,
+    GenerateURL
+} from '@payloadcms/plugin-seo/types';
+import seoPlugin from '@payloadcms/plugin-seo';
 import dotenv from "dotenv";
 import path from "path";
 dotenv.config({
@@ -28,6 +34,14 @@ export default buildConfig({
             ogImage: "/og-image.png",
         },
     },
+    plugins: [
+        seoPlugin({
+            collections: [
+                'sites',
+            ],
+            uploadsCollection: 'media'
+        })
+    ],
     rateLimit: {
         max: 2000,
     },
