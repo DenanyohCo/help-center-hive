@@ -3,7 +3,6 @@ import { getPayloadClient } from "./get-payload";
 import { nextApp, nextHandler } from "./next-utils";
 import nextBuild from "next/dist/build";
 import path from "path";
-
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
