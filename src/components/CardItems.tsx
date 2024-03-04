@@ -23,12 +23,7 @@ const CardItems = () => {
     } = useQuery("sites", () =>
         axios.get("/api/websites").then((res) => res.data)
     );
-    // console.log(sites);
     const cardItems: Site[] = sites?.docs || [];
-    // while (sites?.page == sites?.titalPage) {
-    //     console.log(sites?.docs);
-    //     sites.pagingCounter++;
-    // }
     return (
         <section>
             <div className="container mb-40 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
