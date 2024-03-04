@@ -81,6 +81,46 @@ var start = function () { return __awaiter(void 0, void 0, void 0, function () {
                     }); });
                     return [2 /*return*/];
                 }
+                app.post("/api/contact", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+                    var _a, data, errors;
+                    return __generator(this, function (_b) {
+                        switch (_b.label) {
+                            case 0: return [4 /*yield*/, payload.create({
+                                    collection: 'contact-form',
+                                    data: req.body,
+                                })];
+                            case 1:
+                                _a = _b.sent(), data = _a.data, errors = _a.errors;
+                                if (errors) {
+                                    res.status(400).json({ errors: errors });
+                                }
+                                else {
+                                    res.status(200).json({ data: data });
+                                }
+                                return [2 /*return*/];
+                        }
+                    });
+                }); });
+                app.post("/api/submit", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+                    var _a, data, errors;
+                    return __generator(this, function (_b) {
+                        switch (_b.label) {
+                            case 0: return [4 /*yield*/, payload.create({
+                                    collection: 'submit-site',
+                                    data: req.body,
+                                })];
+                            case 1:
+                                _a = _b.sent(), data = _a.data, errors = _a.errors;
+                                if (errors) {
+                                    res.status(400).json({ errors: errors });
+                                }
+                                else {
+                                    res.status(200).json({ data: data });
+                                }
+                                return [2 /*return*/];
+                        }
+                    });
+                }); });
                 app.get("/api/websites", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
                     var sites;
                     return __generator(this, function (_a) {

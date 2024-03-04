@@ -2,7 +2,9 @@
 const nextConfig = {
     images: {
         unoptimized: true,
-        domains: ['localhost', process.env.NEXT_PUBLIC_PAYLOAD_URL]
+        domains: ['localhost', process.env.NEXT_PUBLIC_PAYLOAD_URL],
+        loader: 'imgix',
+        path: './media',
     },
 };
 

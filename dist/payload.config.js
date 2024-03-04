@@ -11,6 +11,9 @@ var Category_1 = require("./collections/Category");
 var Sites_1 = require("./collections/Sites");
 var TechStack_1 = require("./collections/TechStack");
 var Media_1 = require("./collections/Media");
+var ContactForm_1 = require("./collections/ContactForm");
+var SubmitSite_1 = require("./collections/SubmitSite");
+var plugin_seo_1 = __importDefault(require("@payloadcms/plugin-seo"));
 var dotenv_1 = __importDefault(require("dotenv"));
 var path_1 = __importDefault(require("path"));
 dotenv_1.default.config({
@@ -18,7 +21,7 @@ dotenv_1.default.config({
 });
 exports.default = (0, config_1.buildConfig)({
     serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "",
-    collections: [Sites_1.Sites, Category_1.Category, TechStack_1.TechStack, Media_1.Media],
+    collections: [Sites_1.Sites, Category_1.Category, TechStack_1.TechStack, Media_1.Media, ContactForm_1.ContactForm, SubmitSite_1.SubmitSite],
     routes: {
         admin: "/admin",
     },
@@ -30,6 +33,14 @@ exports.default = (0, config_1.buildConfig)({
             ogImage: "/og-image.png",
         },
     },
+    plugins: [
+        (0, plugin_seo_1.default)({
+            collections: [
+                'sites',
+            ],
+            uploadsCollection: 'media'
+        })
+    ],
     rateLimit: {
         max: 2000,
     },
@@ -39,5 +50,5 @@ exports.default = (0, config_1.buildConfig)({
     }),
     typescript: {
         outputFile: path_1.default.resolve(__dirname, "payload-types.ts"),
-    },
+    }
 });
