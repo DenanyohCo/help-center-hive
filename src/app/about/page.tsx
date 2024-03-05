@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import Head from "next/head";
 const About = () => {
     const newMetadata = {
         title: 'About Us',
@@ -19,10 +18,10 @@ const About = () => {
 
     return (
         <>
-            <Head>
+            <Helmet>
                 <title>About Us</title>
                 <meta name="description" content="Discover the best websites created by top design agencies, and get ideas and inspiration for your next website." />
-            </Head>
+            </Helmet>
             <section className="container">
                 <div className="bg-[#F9F6F2] py-20 px-10 md:px-20 mx-auto container">
                     <div className="text-center mb-12">
