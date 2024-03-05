@@ -28,11 +28,11 @@ export default buildConfig({
     },
     admin: {
         bundler: webpackBundler(),
-        meta: {
-            titleSuffix: "- HelpCenterHive",
-            favicon: "/favicon.ico",
-            ogImage: "/og-image.png",
-        },
+        // meta: {
+        //     titleSuffix: "- HelpCenterHive",
+        //     favicon: "/favicon.ico",
+        //     ogImage: "/og-image.png",
+        // },
     },
     plugins: [
         seoPlugin({

@@ -7,8 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdArrowBackIos } from "react-icons/md";
 import { PiArrowSquareOutFill } from "react-icons/pi";
-import React from "react";
-import Head from 'next/head';
+import React, { useEffect } from "react";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 import {
     Card,
     CardContent,
@@ -16,8 +17,20 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-
 const SitePage = () => {
+    const helmetContext: { helmet?: any } = {};
+    useEffect(() => {
+        const { helmet } = helmetContext;
+        helmet && helmet.toComponent().forEach((component: any) => {
+            if (component && component.props) {
+                document.title = component.props.title || '';
+                let metaDescription = document.querySelector('meta[name="description"]');
+                if (metaDescription) {
+                    metaDescription.setAttribute('content', component.props.content || '');
+                }
+            }
+        });
+    }, []);
     const pathName = usePathname();
     const path = pathName.split("/").pop();
     const {
@@ -44,24 +57,18 @@ const SitePage = () => {
     }
     const randomSites = shuffle(similarSites || []).slice(0, 3);
     return (
-        <>
-            <Head>
-                <title>{site?.seo?.title}</title>
-                <meta name="description" content={site?.seo?.description} />
-                <meta property="og:title" content={site?.seo?.ogTitle} />
-                <meta property="og:description" content={site?.seo?.ogDescription} />
-                <meta property="og:image" content={site?.seo?.ogImage?.url} />
-                <meta name="twitter:title" content={site?.seo?.twitterTitle} />
-                <meta name="twitter:description" content={site?.seo?.twitterDescription} />
-                <meta name="twitter:image" content={site?.seo?.twitterImage?.url} />
-            </Head>
+        <HelmetProvider context={helmetContext}>
+            <Helmet>
+                <title>{site?.meta?.title}</title>
+                <meta name="description" content={site?.meta?.description} />
+            </Helmet>
             <section className="container">
                 <Link href={"/"} className="flex items-center py-4">
                     <MdArrowBackIos /> See All Inspiration
                 </Link>
                 <div className="flex flex-col md:flex-row-reverse">
                     <div className="my-4">
-                        <div className="h-fit w-auto border-2 p-2 px-4">
+                        <div className="h-fit md:w-[420px] w-auto border-2 p-2 px-4">
                             <h1 className="mb-2 text-2xl font-bold">
                                 {site?.name}
                             </h1>
@@ -162,7 +169,8 @@ const SitePage = () => {
                     </div>
                 </div>
             </section>
-        </>
+        </HelmetProvider>
+
     );
 };
 

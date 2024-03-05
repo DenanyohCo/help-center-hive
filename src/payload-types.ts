@@ -35,6 +35,11 @@ export interface Site {
   category?: (string | Category)[] | null;
   tech_stack?: (string | TechStack)[] | null;
   is_featured?: boolean | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    image?: string | Media | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
