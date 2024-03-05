@@ -55,9 +55,9 @@ const CategoryPage = () => {
     return (
         <HelmetProvider context={helmetContext}>
             <Helmet>
-                <title>{categories.meta.title}</title>
-                <meta name="description" content={categories.meta.description} />
-                <meta property="og:image" content={categories.meta.image} />
+                <title>{categories?.meta?.title}</title>
+                <meta name="description" content={categories?.meta?.description} />
+                <meta property="og:image" content={categories?.meta?.image} />
             </Helmet>
             <section className="container">
                 <div className="mt-6 mx-auto flex flex-col items-center py-20 text-center">
