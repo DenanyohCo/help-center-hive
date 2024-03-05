@@ -52,12 +52,14 @@ const CategoryPage = () => {
         axios.get("/api/categories").then((res) => res.data)
     );
     const buttonItems: Category[] = categories?.docs.filter((category: Category) => category.name !== path) || [];
+    const category = categories?.docs.find((category: Category) => category.name === path);
+
     return (
         <HelmetProvider context={helmetContext}>
             <Helmet>
-                <title>{categories?.meta?.title}</title>
-                <meta name="description" content={categories?.meta?.description} />
-                <meta property="og:image" content={categories?.meta?.image} />
+                <title>{category?.meta?.title}</title>
+                <meta name="description" content={category?.meta?.description} />
+                <meta property="og:image" content={category?.meta?.image} />
             </Helmet>
             <section className="container">
                 <div className="mt-6 mx-auto flex flex-col items-center py-20 text-center">
