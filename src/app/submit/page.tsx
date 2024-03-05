@@ -3,20 +3,21 @@ import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from '@/components/ui/button';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 const SubmitForm = () => {
-    const helmetContext: { helmet?: any } = {};
+    const [metadata, setMetadata] = useState({
+        title: 'Submit Your Website',
+        description: 'Submit your website to be featured on our website.'
+    });
+
     useEffect(() => {
-        const { helmet } = helmetContext;
-        helmet && helmet.toComponent().forEach((component: any) => {
-            if (component && component.props) {
-                document.title = component.props.title || '';
-                let metaDescription = document.querySelector('meta[name="description"]');
-                if (metaDescription) {
-                    metaDescription.setAttribute('content', component.props.content || '');
-                }
-            }
-        });
+        const newMetadata = {
+            title: 'Submit Your Website',
+            description: 'Submit your website to be featured on our website.'
+        };
+        if (metadata.title !== newMetadata.title || metadata.description !== newMetadata.description) {
+            setMetadata(newMetadata);
+        }
     }, []);
     const [formState, setFormState] = useState({
         name: '',
@@ -52,12 +53,12 @@ const SubmitForm = () => {
     };
 
     return (
-        <HelmetProvider context={helmetContext}>
-
+        <>
             <Helmet>
-                <title>Submit Your Website</title>
-                <meta name="description" content="Submit your website to be featured on our website." />
+                <title>{metadata.title}</title>
+                <meta name="description" content={metadata.description} />
             </Helmet>
+
             <section className='container'>
                 <div className="mx-auto px-4 py-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -95,7 +96,7 @@ const SubmitForm = () => {
                     </div>
                 </div>
             </section>
-        </HelmetProvider>
+        </>
     );
 };
 

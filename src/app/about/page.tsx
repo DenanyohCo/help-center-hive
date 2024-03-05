@@ -9,9 +9,7 @@ const About = () => {
         title: 'About Us',
         description: 'Discover the best websites created by top design agencies, and get ideas and inspiration for your next website.'
     };
-
     const [metadata, setMetadata] = useState(newMetadata);
-
     useEffect(() => {
         if (metadata.title !== newMetadata.title || metadata.description !== newMetadata.description) {
             setMetadata(newMetadata);
