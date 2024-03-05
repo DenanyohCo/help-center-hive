@@ -61,6 +61,7 @@ const SitePage = () => {
             <Helmet>
                 <title>{site?.meta?.title}</title>
                 <meta name="description" content={site?.meta?.description} />
+                <meta property="og:image" content={site?.meta?.image} />
             </Helmet>
             <section className="container">
                 <Link href={"/"} className="flex items-center py-4">
