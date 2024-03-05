@@ -9,7 +9,7 @@ import NewsletterCTA from "@/components/NewsletterCTA";
 import { PiArrowSquareOutFill } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
 import React, { useEffect, useState } from "react";
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import {
     Card,
     CardContent,
@@ -18,6 +18,19 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 const CategoryPage = () => {
+    const helmetContext: { helmet?: any } = {};
+    useEffect(() => {
+        const { helmet } = helmetContext;
+        helmet && helmet.toComponent().forEach((component: any) => {
+            if (component && component.props) {
+                document.title = component.props.title || '';
+                let metaDescription = document.querySelector('meta[name="description"]');
+                if (metaDescription) {
+                    metaDescription.setAttribute('content', component.props.content || '');
+                }
+            }
+        });
+    }, []);
     const pathName = usePathname();
     const path = pathName.split("/").pop();
     const {
@@ -39,22 +52,12 @@ const CategoryPage = () => {
         axios.get("/api/categories").then((res) => res.data)
     );
     const buttonItems: Category[] = categories?.docs.filter((category: Category) => category.name !== path) || [];
-    const [metadata, setMetadata] = useState({ title: '', description: '' });
-
-    useEffect(() => {
-        const newMetadata = {
-            title: 'Category Page',
-            description: 'Discover the best websites in each category, and get ideas and inspiration for your next website.'
-        };
-        if (metadata.title !== newMetadata.title || metadata.description !== newMetadata.description) {
-            setMetadata(newMetadata);
-        }
-    }, []);
     return (
-        <>
+        <HelmetProvider context={helmetContext}>
             <Helmet>
-                <title>{metadata.title}</title>
-                <meta name="description" content={metadata.description} />
+                <title>{categories.meta.title}</title>
+                <meta name="description" content={categories.meta.description} />
+                <meta property="og:image" content={categories.meta.image} />
             </Helmet>
             <section className="container">
                 <div className="mt-6 mx-auto flex flex-col items-center py-20 text-center">
@@ -131,8 +134,7 @@ const CategoryPage = () => {
                     )}
                 </div>
             </section>
-        </>
-    )
+        </HelmetProvider>)
 };
 
 export default CategoryPage;
