@@ -68,6 +68,11 @@ export interface Category {
   name: string;
   slug: string;
   description?: string | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    image?: string | Media | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
