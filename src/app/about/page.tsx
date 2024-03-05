@@ -7,7 +7,8 @@ import { Helmet } from 'react-helmet';
 const About = () => {
     const newMetadata = {
         title: 'About Us',
-        description: 'Discover the best websites created by top design agencies, and get ideas and inspiration for your next website.'
+        description: 'Discover the best websites created by top design agencies, and get ideas and inspiration for your next website.',
+        image: 'https://example.com/path-to-your-image.jpg' // Replace with your image URL
     };
     const [metadata, setMetadata] = useState(newMetadata);
     useEffect(() => {
@@ -19,8 +20,9 @@ const About = () => {
     return (
         <>
             <Helmet>
-                <title>About Us</title>
-                <meta name="description" content="Discover the best websites created by top design agencies, and get ideas and inspiration for your next website." />
+                <title>{metadata.title}</title>
+                <meta name="description" content={metadata.description} />
+                <meta property="og:image" content={metadata.image} />
             </Helmet>
             <section className="container">
                 <div className="bg-[#F9F6F2] py-20 px-10 md:px-20 mx-auto container">

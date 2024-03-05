@@ -5,20 +5,17 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet';
 const SubmitForm = () => {
-    const [metadata, setMetadata] = useState({
+    const newMetadata = {
         title: 'Submit Your Website',
-        description: 'Submit your website to be featured on our website.'
-    });
-
+        description: 'Submit your website to be featured on our website.',
+        image: 'https://example.com/path-to-your-image.jpg' // Replace with your image URL
+    };
+    const [metadata, setMetadata] = useState(newMetadata);
     useEffect(() => {
-        const newMetadata = {
-            title: 'Submit Your Website',
-            description: 'Submit your website to be featured on our website.'
-        };
         if (metadata.title !== newMetadata.title || metadata.description !== newMetadata.description) {
             setMetadata(newMetadata);
         }
-    }, []);
+    }, [newMetadata]);
     const [formState, setFormState] = useState({
         name: '',
         email: '',
@@ -57,6 +54,7 @@ const SubmitForm = () => {
             <Helmet>
                 <title>{metadata.title}</title>
                 <meta name="description" content={metadata.description} />
+                <meta property="og:image" content={metadata.image} />
             </Helmet>
 
             <section className='container'>

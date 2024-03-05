@@ -3,25 +3,23 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Helmet } from 'react-helmet';
 const Privacy = () => {
-    const [metadata, setMetadata] = useState({
-        title: 'Privacy Policy',
-        description: 'Help Center Design Privacy Policy'
-    });
-
+    const newMetadata = {
+        title: 'privacy policy',
+        description: 'Privacy Policy for Help Center Design. At Help Center Design, accessible from www.helpcenter.design, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Help Center Design and how we use it. If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.',
+        image: 'https://example.com/path-to-your-image.jpg' // Replace with your image URL
+    };
+    const [metadata, setMetadata] = useState(newMetadata);
     useEffect(() => {
-        const newMetadata = {
-            title: 'Privacy Policy',
-            description: 'Help Center Design Privacy Policy'
-        };
         if (metadata.title !== newMetadata.title || metadata.description !== newMetadata.description) {
             setMetadata(newMetadata);
         }
-    }, []);
+    }, [newMetadata]);
     return (
         <>
             <Helmet>
                 <title>{metadata.title}</title>
                 <meta name="description" content={metadata.description} />
+                <meta property="og:image" content={metadata.image} />
             </Helmet>
             <section className="container py-12 my-4">
                 <div className="container bg-[#FFFFFF]">

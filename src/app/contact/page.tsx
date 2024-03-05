@@ -17,11 +17,6 @@ const ContactForm = () => {
             [e.target.name]: e.target.value,
         });
     };
-    const [metadata, setMetadata] = useState({
-        title: 'Contact Us',
-        description: 'Do you have feedback, want to collaborate or advertise? Please complete the below and we\'ll be in touch.'
-    });
-
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         const response = await fetch('/api/contact', {
@@ -37,20 +32,23 @@ const ContactForm = () => {
             alert('There was an error submitting the form.');
         }
     };
+    const newMetadata = {
+        title: 'contact us',
+        description: 'Do you have feedback, want to collaborate or advertise? Please complete the below and we\'ll be in touch.',
+        image: 'https://example.com/path-to-your-image.jpg' // Replace with your image URL
+    };
+    const [metadata, setMetadata] = useState(newMetadata);
     useEffect(() => {
-        const newMetadata = {
-            title: 'Contact Us',
-            description: 'Do you have feedback, want to collaborate or advertise? Please complete the below and we\'ll be in touch.'
-        };
         if (metadata.title !== newMetadata.title || metadata.description !== newMetadata.description) {
             setMetadata(newMetadata);
         }
-    }, []);
+    }, [newMetadata]);
     return (
         <>
             <Helmet>
                 <title>{metadata.title}</title>
                 <meta name="description" content={metadata.description} />
+                <meta property="og:image" content={metadata.image} />
             </Helmet>
             <section className='container'>
                 <div className="flex items-center justify-center min-h-screen py-16 px-4">

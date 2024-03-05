@@ -7,9 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { MdArrowBackIos } from "react-icons/md";
 import { PiArrowSquareOutFill } from "react-icons/pi";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-
 import {
     Card,
     CardContent,
@@ -18,19 +17,6 @@ import {
     CardTitle,
 } from "@/components/ui/card";
 const SitePage = () => {
-    const helmetContext: { helmet?: any } = {};
-    useEffect(() => {
-        const { helmet } = helmetContext;
-        helmet && helmet.toComponent().forEach((component: any) => {
-            if (component && component.props) {
-                document.title = component.props.title || '';
-                let metaDescription = document.querySelector('meta[name="description"]');
-                if (metaDescription) {
-                    metaDescription.setAttribute('content', component.props.content || '');
-                }
-            }
-        });
-    }, []);
     const pathName = usePathname();
     const path = pathName.split("/").pop();
     const {
@@ -56,11 +42,23 @@ const SitePage = () => {
         return array;
     }
     const randomSites = shuffle(similarSites || []).slice(0, 3);
+    const newMetadata = {
+        title: site?.meta?.title || site?.name,
+        description: site?.meta?.description,
+        image: (site?.image as Media)?.url,
+    };
+    const [metadata, setMetadata] = useState(newMetadata);
+    useEffect(() => {
+        if (metadata.title !== newMetadata.title || metadata.description !== newMetadata.description) {
+            setMetadata(newMetadata);
+        }
+    }, [newMetadata]);
     return (
-        <HelmetProvider context={helmetContext}>
+        <>
             <Helmet>
-                <title>{site?.meta?.title}</title>
-                <meta name="description" content={site?.meta?.description} />
+                <title>{metadata.title}</title>
+                <meta name="description" content={metadata.description} />
+                <meta property="og:image" content={metadata.image || ''} />
             </Helmet>
             <section className="container">
                 <Link href={"/"} className="flex items-center py-4">
@@ -169,8 +167,7 @@ const SitePage = () => {
                     </div>
                 </div>
             </section>
-        </HelmetProvider>
-
+        </>
     );
 };
 
