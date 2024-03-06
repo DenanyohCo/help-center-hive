@@ -2,16 +2,9 @@
 const nextConfig = {
     images: {
         unoptimized: true,
-        remotePatterns: [
-            {
-                protocol: "http",
-                hostname: "localhost",
-            },
-            {
-                protocol: "https",
-                hostname: "www.helpcenter.design",
-            },
-        ],
+        domains: ['localhost', 'https://www.helpcenter.design'],
+        loader: 'imgix',
+        path: '../media',
     },
 };
 
