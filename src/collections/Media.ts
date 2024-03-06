@@ -7,9 +7,12 @@ export const Media: CollectionConfig = {
     },
     access: {
         read: () => true,
-        create: ({ req }) => req.user.email === process.env.ADMIN_EMAIL,
-        update: ({ req }) => req.user.email === process.env.ADMIN_EMAIL,
-        delete: ({ req }) => req.user.email === process.env.ADMIN_EMAIL,
+        create: () => true,
+        update: () => true,
+        delete: () => true,
+        // create: ({ req }) => req.user.email === process.env.ADMIN_EMAIL,
+        // update: ({ req }) => req.user.email === process.env.ADMIN_EMAIL,
+        // delete: ({ req }) => req.user.email === process.env.ADMIN_EMAIL,
     },
     upload: {
         staticURL: "/media",
