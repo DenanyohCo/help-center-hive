@@ -5,7 +5,6 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import NewsletterCTA from "@/components/NewsletterCTA";
 import { PiArrowSquareOutFill } from "react-icons/pi";
 import { Button } from "@/components/ui/button";
 import React, { useEffect, useState } from "react";
