@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        unoptimized: true,
+        // unoptimized: true,
         domains: ['localhost', 'https://www.helpcenter.design'],
         loader: 'imgix',
         path: '../media',
