@@ -8,7 +8,7 @@ const About = () => {
     const newMetadata = {
         title: 'About Us',
         description: 'Discover the best websites created by top design agencies, and get ideas and inspiration for your next website.',
-        image: 'https://example.com/path-to-your-image.jpg' // Replace with your image URL
+        image: 'https://example.com/path-to-your-image.jpg' 
     };
     const [metadata, setMetadata] = useState(newMetadata);
     useEffect(() => {
