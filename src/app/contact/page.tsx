@@ -35,7 +35,7 @@ const ContactForm = () => {
     const newMetadata = {
         title: 'contact us',
         description: 'Do you have feedback, want to collaborate or advertise? Please complete the below and we\'ll be in touch.',
-        image: 'https://example.com/path-to-your-image.jpg'
+        image: 'https://example.com/path-to-your-image.jpg' // Replace with your image URL
     };
     const [metadata, setMetadata] = useState(newMetadata);
     useEffect(() => {
