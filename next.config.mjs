@@ -6,7 +6,7 @@ const nextConfig = {
         loader: 'imgix',
         path: '../media',
     },
-    // assetPrefix: process.env.NODE_ENV === 'production' ? '/help-center-hive' : '',
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/help-center-hive' : '',
 };
 
 export default nextConfig;
