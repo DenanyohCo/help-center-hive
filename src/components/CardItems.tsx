@@ -49,7 +49,7 @@ const CardItems = () => {
                                                 <Link href={`sites/${item.path}`}>
                                                     <CardHeader>
                                                         <Image
-                                                            unoptimized
+                                                        // unoptimized
                                                             src={
                                                                 (
                                                                     item.image as Media
@@ -60,7 +60,8 @@ const CardItems = () => {
                                                                     item.image as Media
                                                                 )?.alt ?? ""
                                                             }
-
+                                                            width="380"
+                                                            height="380"
                                                             className="h-full w-full max-w-full object-cover object-top"
                                                         />
                                                     </CardHeader>
@@ -103,7 +104,7 @@ const CardItems = () => {
                                                 <Link href={`sites/${item.path}`}>
                                                     <CardHeader>
                                                         <Image
-                                                            unoptimized
+                                                        // unoptimized
                                                             src={
                                                                 (
                                                                     item.image as Media
@@ -114,7 +115,8 @@ const CardItems = () => {
                                                                     item.image as Media
                                                                 )?.alt ?? ""
                                                             }
-
+                                                            width="380"
+                                                            height="380"
                                                             className="h-full w-full max-w-full object-cover object-top"
                                                         />
                                                     </CardHeader>
