@@ -138,7 +138,7 @@ const SitePage = () => {
                                                 <Link href={`${item.path}`}>
                                                     <CardHeader>
                                                         <Image
-                                                            unoptimized
+                                                            // unoptimized
                                                             src={
                                                                 (
                                                                     item.image as Media
