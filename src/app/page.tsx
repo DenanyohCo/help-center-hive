@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from 'react-helmet';
 const Home = () => {
     const newMetadata = {
-        title: 'The best Help Center Site Examples for Design Inspiration - Help Center Design',
+        title: 'The best Help Center Site Examples for Design Inspiration - Help Center Design 2',
         description: 'Looking for help center page inspiration? Look no further. Help Center Hive curates and showcases the best help center and support center designs on the web.',
         image: 'https://example.com/path-to-your-image.jpg' // Replace with your image URL
     };
