@@ -20,7 +20,7 @@ dotenv_1.default.config({
     path: path_1.default.resolve(__dirname, "../.env"),
 });
 exports.default = (0, config_1.buildConfig)({
-    serverURL: process.env.NEXT_PUBLIC_SERVER_URL || "",
+    serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || "",
     collections: [Sites_1.Sites, Category_1.Category, TechStack_1.TechStack, Media_1.Media, ContactForm_1.ContactForm, SubmitSite_1.SubmitSite],
     routes: {
         admin: "/admin",
