@@ -7,6 +7,7 @@ exports.Media = {
         useAsTitle: "alt",
     },
     upload: {
+        // disableLocalStorage: true,
         staticURL: "/media",
         staticDir: "media",
         mimeTypes: ["image/*"],

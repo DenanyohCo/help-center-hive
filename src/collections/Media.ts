@@ -6,6 +6,7 @@ export const Media: CollectionConfig = {
         useAsTitle: "alt",
     },
     upload: {
+        // disableLocalStorage: true,
         staticURL: "/media",
         staticDir: "media",
         mimeTypes: ["image/*"],
@@ -16,4 +17,5 @@ export const Media: CollectionConfig = {
             type: "text",
         },
     ],
+
 };
