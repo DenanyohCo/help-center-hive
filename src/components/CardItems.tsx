@@ -50,9 +50,9 @@ const CardItems = () => {
                                                     <CardHeader>
                                                         <Image
                                                             // unoptimized
-                                                            src={`/../media/${(
+                                                            src={(
                                                                 item.image as Media
-                                                            )?.filename ?? ""}`
+                                                            )?.url ?? ""
                                                             }
                                                             alt={
                                                                 (
@@ -104,9 +104,9 @@ const CardItems = () => {
                                                     <CardHeader>
                                                         <Image
                                                             // unoptimized
-                                                            src={`/../media/${(
+                                                            src={(
                                                                 item.image as Media
-                                                            )?.filename ?? ""}`
+                                                            )?.url ?? ""
                                                             }
                                                             alt={
                                                                 (
