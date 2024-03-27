@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
         unoptimized: true,
-        domains: ['localhost', 'https://www.helpcenter.design'],
+        domains: ['localhost', 'helpcenter.design'],
         loader: 'imgix',
         path: './media',
     },
