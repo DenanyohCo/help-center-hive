@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['localhost', 'helpcenter.design'],
+        unoptimized: true,
+        domains: ['localhost', 'https://www.helpcenter.design'],
+        loader: 'imgix',
+        path: './media',
     },
+    reactStrictMode: true,
 };
 
 export default nextConfig;
