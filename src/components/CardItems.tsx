@@ -49,11 +49,10 @@ const CardItems = () => {
                                                 <Link href={`sites/${item.path}`}>
                                                     <CardHeader>
                                                         <Image
-                                                        // unoptimized
-                                                            src={
-                                                                (
-                                                                    item.image as Media
-                                                                )?.url ?? ""
+                                                            // unoptimized
+                                                            src={`/../media/${(
+                                                                item.image as Media
+                                                            )?.filename ?? ""}`
                                                             }
                                                             alt={
                                                                 (
@@ -104,11 +103,10 @@ const CardItems = () => {
                                                 <Link href={`sites/${item.path}`}>
                                                     <CardHeader>
                                                         <Image
-                                                        // unoptimized
-                                                            src={
-                                                                (
-                                                                    item.image as Media
-                                                                )?.url ?? ""
+                                                            // unoptimized
+                                                            src={`/../media/${(
+                                                                item.image as Media
+                                                            )?.filename ?? ""}`
                                                             }
                                                             alt={
                                                                 (
