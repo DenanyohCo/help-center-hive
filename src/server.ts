@@ -5,7 +5,6 @@ import nextBuild from "next/dist/build";
 import path from "path";
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
-
 const start = async () => {
     const payload = await getPayloadClient({
         initOptions: {
@@ -18,13 +17,10 @@ const start = async () => {
     if (process.env.NEXT_BUILD) {
         app.listen(PORT, async () => {
             payload.logger.info("Next.js is building for production");
-
             // @ts-expect-error
             await nextBuild(path.join(__dirname, "../"));
-
             process.exit();
         });
-
         return;
     }
     app.post("/api/contact", async (req, res) => {
@@ -38,7 +34,6 @@ const start = async () => {
             res.status(200).json({ data });
         }
     });
-
     app.post("/api/submit", async (req, res) => {
         const { data, errors } = await payload.create({
             collection: 'submit-site',
@@ -50,7 +45,6 @@ const start = async () => {
             res.status(200).json({ data });
         }
     });
-
     app.get("/api/websites", async (req, res) => {
         const sites = await payload.find({
             collection: "sites",
@@ -68,15 +62,13 @@ const start = async () => {
         res.json(categories);
     });
     app.use((req, res) => nextHandler(req, res));
-
     nextApp.prepare().then(() => {
         payload.logger.info(`Next app started`);
         app.listen(PORT, () => {
             payload.logger.info(
-                `Next URL ${process.env.NEXT_PUBLIC_SERVER_URL}`
+                `Next URL ${process.env.PAYLOAD_PUBLIC_SERVER_URL}`
             );
         });
     });
 };
-
 start();

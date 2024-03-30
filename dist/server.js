@@ -157,7 +157,7 @@ var start = function () { return __awaiter(void 0, void 0, void 0, function () {
                 next_utils_1.nextApp.prepare().then(function () {
                     payload.logger.info("Next app started");
                     app.listen(PORT, function () {
-                        payload.logger.info("Next URL ".concat(process.env.NEXT_PUBLIC_SERVER_URL));
+                        payload.logger.info("Next URL ".concat(process.env.PAYLOAD_PUBLIC_SERVER_URL));
                     });
                 });
                 return [2 /*return*/];
