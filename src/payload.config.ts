@@ -17,9 +17,13 @@ import {
 import seoPlugin from '@payloadcms/plugin-seo';
 import dotenv from "dotenv";
 import path from "path";
+import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3';
+import { cloudStorage } from '@payloadcms/plugin-cloud-storage';
 dotenv.config({
     path: path.resolve(__dirname, "../.env"),
 });
+
+// const storageAdapter = 
 export default buildConfig({
     serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || "",
     collections: [Sites, Category, TechStack, Media, ContactForm, SubmitSite],
@@ -40,7 +44,25 @@ export default buildConfig({
                 'sites', 'category'
             ],
             uploadsCollection: 'media'
-        })
+        }),
+        cloudStorage({
+            collections: {
+                'media': {
+                    adapter: s3Adapter({
+                        config: {
+                            endpoint: process.env.S3_ENDPOINT,
+                            credentials: {
+                                accessKeyId: process.env.S3_ACCESS_KEY ?? "",
+                                secretAccessKey: process.env.S3_SECRET_KEY ?? "",
+                            },
+                            region: process.env.S3_REGION ?? "",
+                            
+                        },
+                        bucket: process.env.S3_BUCKET_NAME ?? "",
+                    }),
+                },
+            },
+        }),
     ],
     rateLimit: {
         max: 2000,

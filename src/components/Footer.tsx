@@ -93,6 +93,7 @@ function NameLogo() {
             className="flex flex-row items-center justify-start p-2 md:justify-center"
         >
             <Image
+                unoptimized
                 src="/HelpCenterDesignsLogo.svg"
                 width="50"
                 height="50"
