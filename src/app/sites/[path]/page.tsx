@@ -105,8 +105,14 @@ const SitePage = () => {
                     <div className="my-4 mr-4 w-auto border-2">
                         <Image
                             unoptimized
-                            src={(site?.image as Media)?.url ?? ""}
-                            alt={site?.name}
+                            src={
+                                (
+                                    site.image as Media
+                                )?.url ?? ""
+                            }
+                            alt={(
+                                site.image as Media
+                            )?.alt ?? ""}
                             width="1500"
                             height="1500"
                             className="h-full w-full max-w-full"
@@ -171,7 +177,6 @@ const SitePage = () => {
                 </div>
             </section>
         </HelmetProvider>
-
     );
 };
 
