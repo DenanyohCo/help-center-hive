@@ -29,7 +29,7 @@ const Privacy = () => {
                         What information do we collect?
                         <p className="text-lg font-normal pt-4">
                             At Help Center Design, accessible from <Link href='https://www.helpcenter.design'>
-                                www.helpcenter.design </Link> , one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Help Center Design and how we use it.
+                                www.helpcenter.design </Link>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Help Center Design and how we use it.
                             If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
                         </p>
                     </div>
