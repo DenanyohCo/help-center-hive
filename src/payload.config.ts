@@ -22,8 +22,6 @@ import { cloudStorage } from '@payloadcms/plugin-cloud-storage';
 dotenv.config({
     path: path.resolve(__dirname, "../.env"),
 });
-
-// const storageAdapter = 
 export default buildConfig({
     serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || "",
     collections: [Sites, Category, TechStack, Media, ContactForm, SubmitSite],
@@ -56,7 +54,6 @@ export default buildConfig({
                                 secretAccessKey: process.env.S3_SECRET_KEY ?? "",
                             },
                             region: process.env.S3_REGION ?? "",
-                            
                         },
                         bucket: process.env.S3_BUCKET_NAME ?? "",
                     }),

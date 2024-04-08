@@ -6,5 +6,4 @@ const nextConfig = {
         path: './media',
     },
 };
-
 export default nextConfig;
