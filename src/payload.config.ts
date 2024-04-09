@@ -43,23 +43,23 @@ export default buildConfig({
             ],
             uploadsCollection: 'media'
         }),
-        // cloudStorage({
-        //     collections: {
-        //         'media': {
-        //             adapter: s3Adapter({
-        //                 config: {
-        //                     endpoint: process.env.S3_ENDPOINT,
-        //                     credentials: {
-        //                         accessKeyId: process.env.S3_ACCESS_KEY ?? "",
-        //                         secretAccessKey: process.env.S3_SECRET_KEY ?? "",
-        //                     },
-        //                     region: process.env.S3_REGION ?? "",
-        //                 },
-        //                 bucket: process.env.S3_BUCKET_NAME ?? "",
-        //             }),
-        //         },
-        //     },
-        // }),
+        cloudStorage({
+            collections: {
+                'media': {
+                    adapter: s3Adapter({
+                        config: {
+                            endpoint: process.env.S3_ENDPOINT,
+                            credentials: {
+                                accessKeyId: process.env.S3_ACCESS_KEY ?? "",
+                                secretAccessKey: process.env.S3_SECRET_KEY ?? "",
+                            },
+                            region: process.env.S3_REGION ?? "",
+                        },
+                        bucket: process.env.S3_BUCKET_NAME ?? "",
+                    }),
+                },
+            },
+        }),
     ],
     rateLimit: {
         max: 2000,
