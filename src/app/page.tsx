@@ -1,5 +1,7 @@
 export default function Home() {
   return (
-    <main></main>
+    <main className="container text-2xl">
+
+    </main>
   );
 }
