@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
-import clsx from "clsx";
+import { Inter } from "next/font/google";
 import "./globals.css";
-const fontSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={clsx(fontSans.variable)}>
-      <body className="font-body">{children}</body>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
