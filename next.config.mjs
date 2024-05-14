@@ -1,9 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    images: {
-        domains: ['localhost', 'helpcenter.design'],
-        loader: 'imgix',
-        path: './media',
-    },
-};
+const nextConfig = {};
+
 export default nextConfig;
