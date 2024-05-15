@@ -53,7 +53,7 @@ const Navbar = ({ slice }: NavbarProps): JSX.Element => {
               <MdClose />
             </button>
             <div className="container ml-auto mr-6 flex flex-col items-center">
-              <Button variant={"ghost"} className="p-6">
+              <Button variant={"ghost"} className="w-full p-6">
                 <PrismicNextLink field={slice.primary.buy_me_a_coffee_link} className="w-full text-xl font-light">
                   {slice.primary.buy_me_a_coffee_text}
                 </PrismicNextLink>
