@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = NavbarSlice | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -78,22 +78,22 @@ export interface HeroSliceDefaultPrimary {
   /**
    * Title field in *Hero → Default → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: hero.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  title: prismic.RichTextField;
+  title: prismic.KeyTextField;
 
   /**
    * Description field in *Hero → Default → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: hero.default.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  description: prismic.RichTextField;
+  description: prismic.KeyTextField;
 }
 
 /**
@@ -148,6 +148,108 @@ type HeroSliceVariation = HeroSliceDefault;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Primary content in *Navbar → Default → Primary*
+ */
+export interface NavbarSliceDefaultPrimary {
+  /**
+   * Logo Link field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.logo_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  logo_link: prismic.LinkField;
+
+  /**
+   * Logo Image field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.logo_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_image: prismic.ImageField<never>;
+
+  /**
+   * Logo Text field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.logo_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  logo_text: prismic.KeyTextField;
+
+  /**
+   * Buy me a coffee link field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.buy_me_a_coffee_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buy_me_a_coffee_link: prismic.LinkField;
+
+  /**
+   * Buy me a coffee text field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.buy_me_a_coffee_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buy_me_a_coffee_text: prismic.KeyTextField;
+
+  /**
+   * Submit a site link field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.submit_a_site_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  submit_a_site_link: prismic.LinkField;
+
+  /**
+   * Submit a site text field in *Navbar → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navbar.default.primary.submit_a_site_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  submit_a_site_text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Navbar Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavbarSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NavbarSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Navbar*
+ */
+type NavbarSliceVariation = NavbarSliceDefault;
+
+/**
+ * Navbar Shared Slice
+ *
+ * - **API ID**: `navbar`
+ * - **Description**: Navbar
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NavbarSlice = prismic.SharedSlice<"navbar", NavbarSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -167,6 +269,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultItem,
       HeroSliceVariation,
       HeroSliceDefault,
+      NavbarSlice,
+      NavbarSliceDefaultPrimary,
+      NavbarSliceVariation,
+      NavbarSliceDefault,
     };
   }
 }
