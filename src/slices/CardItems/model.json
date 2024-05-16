@@ -1,0 +1,106 @@
+{
+  "id": "card_items",
+  "type": "SharedSlice",
+  "name": "CardItems",
+  "description": "CardItems",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Card Items Featured",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "screenshot": {
+          "type": "Image",
+          "config": {
+            "label": "Screenshot",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "help_center_link": {
+          "type": "Link",
+          "config": {
+            "label": "Help Center Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "website_page_link": {
+          "type": "Link",
+          "config": {
+            "label": "Website Page Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "website_title": {
+          "type": "Text",
+          "config": {
+            "label": "Website Title",
+            "placeholder": ""
+          }
+        },
+        "website_description": {
+          "type": "Text",
+          "config": {
+            "label": "Website Description",
+            "placeholder": ""
+          }
+        }
+      }
+    },
+    {
+      "id": "cardItemsNotFeatured",
+      "name": "Card Items Not Featured",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "screenshot": {
+          "type": "Image",
+          "config": {
+            "label": "Screenshot",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "help_center_link": {
+          "type": "Link",
+          "config": {
+            "label": "Help Center Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "website_page_link": {
+          "type": "Link",
+          "config": {
+            "label": "Website Page Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "website_title": {
+          "type": "Text",
+          "config": {
+            "label": "Website Title",
+            "placeholder": ""
+          }
+        },
+        "website_description": {
+          "type": "Text",
+          "config": {
+            "label": "Website Description",
+            "placeholder": ""
+          }
+        }
+      }
+    }
+  ]
+}

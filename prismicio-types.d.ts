@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = NavbarSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice = CardItemsSlice | NavbarSlice | HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -70,6 +70,161 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = HomepageDocument;
+
+/**
+ * Primary content in *CardItems → Items*
+ */
+export interface CardItemsSliceDefaultItem {
+  /**
+   * Screenshot field in *CardItems → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].screenshot
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  screenshot: prismic.ImageField<never>;
+
+  /**
+   * Help Center Link field in *CardItems → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].help_center_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  help_center_link: prismic.LinkField;
+
+  /**
+   * Website Page Link field in *CardItems → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].website_page_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  website_page_link: prismic.LinkField;
+
+  /**
+   * Website Title field in *CardItems → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].website_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  website_title: prismic.KeyTextField;
+
+  /**
+   * Website Description field in *CardItems → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].website_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  website_description: prismic.KeyTextField;
+}
+
+/**
+ * Card Items Featured variation for CardItems Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardItemsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<CardItemsSliceDefaultItem>
+>;
+
+/**
+ * Primary content in *CardItems → Items*
+ */
+export interface CardItemsSliceCardItemsNotFeaturedItem {
+  /**
+   * Screenshot field in *CardItems → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].screenshot
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  screenshot: prismic.ImageField<never>;
+
+  /**
+   * Help Center Link field in *CardItems → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].help_center_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  help_center_link: prismic.LinkField;
+
+  /**
+   * Website Page Link field in *CardItems → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].website_page_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  website_page_link: prismic.LinkField;
+
+  /**
+   * Website Title field in *CardItems → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].website_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  website_title: prismic.KeyTextField;
+
+  /**
+   * Website Description field in *CardItems → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].website_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  website_description: prismic.KeyTextField;
+}
+
+/**
+ * Card Items Not Featured variation for CardItems Slice
+ *
+ * - **API ID**: `cardItemsNotFeatured`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardItemsSliceCardItemsNotFeatured = prismic.SharedSliceVariation<
+  "cardItemsNotFeatured",
+  Record<string, never>,
+  Simplify<CardItemsSliceCardItemsNotFeaturedItem>
+>;
+
+/**
+ * Slice variation for *CardItems*
+ */
+type CardItemsSliceVariation =
+  | CardItemsSliceDefault
+  | CardItemsSliceCardItemsNotFeatured;
+
+/**
+ * CardItems Shared Slice
+ *
+ * - **API ID**: `card_items`
+ * - **Description**: CardItems
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardItemsSlice = prismic.SharedSlice<
+  "card_items",
+  CardItemsSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -264,6 +419,12 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      CardItemsSlice,
+      CardItemsSliceDefaultItem,
+      CardItemsSliceCardItemsNotFeaturedItem,
+      CardItemsSliceVariation,
+      CardItemsSliceDefault,
+      CardItemsSliceCardItemsNotFeatured,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceDefaultItem,
