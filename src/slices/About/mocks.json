@@ -1,0 +1,67 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "private",
+				"type": "Text"
+			},
+			"description": {
+				"__TYPE__": "FieldContent",
+				"value": "either",
+				"type": "Text"
+			},
+			"story_title": {
+				"__TYPE__": "FieldContent",
+				"value": "tired",
+				"type": "Text"
+			},
+			"story_content": {
+				"__TYPE__": "FieldContent",
+				"value": "triangle",
+				"type": "Text"
+			},
+			"subscribers": {
+				"__TYPE__": "FieldContent",
+				"value": "settle",
+				"type": "Text"
+			},
+			"team_members": {
+				"__TYPE__": "FieldContent",
+				"value": "fear",
+				"type": "Text"
+			},
+			"websites_featured": {
+				"__TYPE__": "FieldContent",
+				"value": "gone",
+				"type": "Text"
+			},
+			"about_us_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+					"width": 3456,
+					"height": 3456
+				},
+				"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+				"width": 3456,
+				"height": 3456,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

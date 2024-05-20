@@ -1,0 +1,105 @@
+{
+  "format": "custom",
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "pages": {
+        "type": "Group",
+        "config": {
+          "label": "Pages",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "text": {
+              "type": "Text",
+              "config": {
+                "label": "Text",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "resources": {
+        "type": "Group",
+        "config": {
+          "label": "Resources",
+          "repeat": true,
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "text": {
+              "type": "Text",
+              "config": {
+                "label": "Text",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "logo_image": {
+        "type": "Image",
+        "config": {
+          "label": "Logo Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "logo_text": {
+        "type": "Text",
+        "config": {
+          "label": "Logo Text",
+          "placeholder": ""
+        }
+      },
+      "logo_link": {
+        "type": "Link",
+        "config": {
+          "label": "Logo Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "twitter_link": {
+        "type": "Link",
+        "config": {
+          "label": "Twitter Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "linkedin_link": {
+        "type": "Link",
+        "config": {
+          "label": "Linkedin Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "footer_note": {
+        "type": "Text",
+        "config": {
+          "label": "Footer Note",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "homepage",
-  "label": "Homepage",
+  "id": "about",
+  "label": "About",
   "repeatable": false,
   "status": true,
   "json": {
@@ -11,10 +11,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "card_items": {
-              "type": "SharedSlice"
-            },
-            "hero": {
+            "about": {
               "type": "SharedSlice"
             }
           }

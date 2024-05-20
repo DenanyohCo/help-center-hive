@@ -1,0 +1,76 @@
+{
+  "id": "about",
+  "type": "SharedSlice",
+  "name": "About",
+  "description": "About",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "subscribers": {
+          "type": "Text",
+          "config": {
+            "label": "Subscribers",
+            "placeholder": ""
+          }
+        },
+        "story_title": {
+          "type": "Text",
+          "config": {
+            "label": "Story Title",
+            "placeholder": ""
+          }
+        },
+        "story_content": {
+          "type": "Text",
+          "config": {
+            "label": "Story Content",
+            "placeholder": ""
+          }
+        },
+        "team_members": {
+          "type": "Text",
+          "config": {
+            "label": "Team Members",
+            "placeholder": ""
+          }
+        },
+        "websites_featured": {
+          "type": "Text",
+          "config": {
+            "label": "Websites Featured",
+            "placeholder": ""
+          }
+        },
+        "about_us_image": {
+          "type": "Image",
+          "config": {
+            "label": "About us Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -3,7 +3,8 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 import { cn } from "@/lib/utils"
-
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const fontSans = Open_Sans({
   subsets: ["latin"],
@@ -23,7 +24,11 @@ export default function RootLayout({
     <html lang="en" className={clsx(fontSans.className)}>
       <body className=
         {cn("min-h-screen overscroll-none bg-background font-sans antialiased", fontSans.variable)}
-      >{children}</body>
+      >
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
