@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"privacy_policy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi sint ea proident irure minim sit ipsum sint dolor duis. Non amet consequat fugiat pariatur sint minim reprehenderit. Lorem ullamco aliquip adipisicing nisi."
+						}
+					}
+				]
+			},
+			"privacy_policy_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "song",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

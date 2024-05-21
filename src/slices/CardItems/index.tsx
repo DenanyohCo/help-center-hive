@@ -2,6 +2,7 @@ import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import { PiArrowSquareOutFill } from "react-icons/pi";
+import NewsletterCTA from "@/components/newsletterCTA";
 import {
   Card,
   CardContent,
@@ -67,7 +68,7 @@ const CardItems = ({ slice }: CardItemsProps): JSX.Element => {
         )}
       </div>
       <div className="col-span-full row-span-2 my-4">
-        {/* <NewsletterCTA /> */}
+        <NewsletterCTA />
       </div>
     </section>
   );

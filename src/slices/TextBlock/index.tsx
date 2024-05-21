@@ -1,0 +1,27 @@
+import { Content } from "@prismicio/client";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+
+/**
+ * Props for `TextBlock`.
+ */
+export type TextBlockProps = SliceComponentProps<Content.TextBlockSlice>;
+
+/**
+ * Component for "TextBlock" Slices.
+ */
+const TextBlock = ({ slice }: TextBlockProps): JSX.Element => {
+  return (
+    <section
+      data-slice-type={slice.slice_type}
+      data-slice-variation={slice.variation}
+      className="container py-12 my-4"
+    >
+      <div className="container bg-[#FFFFFF]">
+        <div className="text-6xl py-4 font-bold">{slice.primary.privacy_policy_heading}</div>
+        <PrismicRichText field={slice.primary.privacy_policy} />
+      </div>
+    </section>
+  );
+};
+
+export default TextBlock;
