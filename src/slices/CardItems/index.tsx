@@ -2,7 +2,7 @@ import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import { PiArrowSquareOutFill } from "react-icons/pi";
-import NewsletterCTA from "@/components/newsletterCTA";
+import NewsletterCTA from "@/components/NewsletterCTA";
 import {
   Card,
   CardContent,
