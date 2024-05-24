@@ -68,7 +68,7 @@ const CardItems = ({ slice }: CardItemsProps): JSX.Element => {
         )}
       </div>
       <div className="col-span-full row-span-2 my-4">
-        <NewsletterCTA />
+        {slice.variation === "default" && <NewsletterCTA />}
       </div>
     </section>
   );
