@@ -18,7 +18,6 @@ const SitePage = () => {
             <Link href={"/"} className="flex items-center py-4">
                 <MdArrowBackIos /> See All Inspiration
             </Link>
-
         </section>
     );
 };
