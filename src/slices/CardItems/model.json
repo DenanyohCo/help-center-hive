@@ -45,9 +45,18 @@
           }
         },
         "website_description": {
-          "type": "Text",
+          "type": "StructuredText",
           "config": {
             "label": "Website Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "website_subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Website Subtitle",
             "placeholder": ""
           }
         }
@@ -93,11 +102,20 @@
             "placeholder": ""
           }
         },
-        "website_description": {
+        "website_subtitle": {
           "type": "Text",
           "config": {
-            "label": "Website Description",
+            "label": "Website Subtitle",
             "placeholder": ""
+          }
+        },
+        "website_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Website Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       }

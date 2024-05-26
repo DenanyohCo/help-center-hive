@@ -6,5 +6,5 @@ export const components = {
   about: dynamic(() => import("./About")),
   card_items: dynamic(() => import("./CardItems")),
   hero: dynamic(() => import("./Hero")),
-  text_block: dynamic(() => import("./TextBlock")),
+  privacy_policy: dynamic(() => import("./PrivacyPolicy")),
 };

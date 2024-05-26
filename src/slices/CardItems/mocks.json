@@ -64,8 +64,22 @@
 					[
 						"website_description",
 						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Velit officia labore eu eu cillum reprehenderit enim ad eiusmod proident quis minim laboris pariatur aliquip. Anim qui id cupidatat proident excepteur duis nulla consectetur deserunt occaecat esse eiusmod nulla exercitation ipsum."
+									}
+								}
+							]
+						}
+					],
+					[
+						"website_subtitle",
+						{
 							"__TYPE__": "FieldContent",
-							"value": "claws",
+							"value": "prevent",
 							"type": "Text"
 						}
 					]
@@ -136,11 +150,25 @@
 						}
 					],
 					[
-						"website_description",
+						"website_subtitle",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "stick",
+							"value": "trunk",
 							"type": "Text"
+						}
+					],
+					[
+						"website_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Aute ullamco amet anim et."
+									}
+								}
+							]
 						}
 					]
 				]

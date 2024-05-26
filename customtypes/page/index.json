@@ -1,17 +1,23 @@
 {
   "format": "page",
-  "id": "privacy_policy",
-  "label": "Privacy Policy",
-  "repeatable": false,
+  "id": "page",
+  "label": "Page",
+  "repeatable": true,
   "status": true,
   "json": {
     "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "privacy_policy": {
+            "hero": {
               "type": "SharedSlice"
             }
           }

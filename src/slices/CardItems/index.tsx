@@ -58,7 +58,7 @@ const CardItems = ({ slice }: CardItemsProps): JSX.Element => {
                   <CardContent>
                     <CardTitle>{item.website_title}</CardTitle>
                     <CardDescription>
-                      {item.website_description}
+                      {item.website_subtitle}
                     </CardDescription>
                   </CardContent>
                 </div>

@@ -387,7 +387,68 @@ export type NavbarDocument<Lang extends string = string> =
     Lang
   >;
 
-type PrivacyPolicyDocumentDataSlicesSlice = TextBlockSlice;
+type PageDocumentDataSlicesSlice = HeroSlice;
+
+/**
+ * Content for Page documents
+ */
+interface PageDocumentData {
+  /**
+   * Slice Zone field in *Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
+   * Meta Description field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Page*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Page document from Prismic
+ *
+ * - **API ID**: `page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+
+type PrivacyPolicyDocumentDataSlicesSlice = PrivacyPolicySlice;
 
 /**
  * Content for Privacy Policy documents
@@ -452,12 +513,79 @@ export type PrivacyPolicyDocument<Lang extends string = string> =
     Lang
   >;
 
+type WebsiteDocumentDataSlicesSlice = CardItemsSlice;
+
+/**
+ * Content for Website documents
+ */
+interface WebsiteDocumentData {
+  /**
+   * Slice Zone field in *Website*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<WebsiteDocumentDataSlicesSlice> /**
+   * Meta Description field in *Website*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: website.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Website*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Website*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: website.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Website document from Prismic
+ *
+ * - **API ID**: `website`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WebsiteDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<WebsiteDocumentData>,
+    "website",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | AboutDocument
   | FooterDocument
   | HomepageDocument
   | NavbarDocument
-  | PrivacyPolicyDocument;
+  | PageDocument
+  | PrivacyPolicyDocument
+  | WebsiteDocument;
 
 /**
  * Primary content in *About → Default → Primary*
@@ -618,12 +746,22 @@ export interface CardItemsSliceDefaultItem {
   /**
    * Website Description field in *CardItems → Items*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: card_items.items[].website_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  website_description: prismic.RichTextField;
+
+  /**
+   * Website Subtitle field in *CardItems → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].website_subtitle
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  website_description: prismic.KeyTextField;
+  website_subtitle: prismic.KeyTextField;
 }
 
 /**
@@ -684,14 +822,24 @@ export interface CardItemsSliceCardItemsNotFeaturedItem {
   website_title: prismic.KeyTextField;
 
   /**
-   * Website Description field in *CardItems → Items*
+   * Website Subtitle field in *CardItems → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: card_items.items[].website_description
+   * - **API ID Path**: card_items.items[].website_subtitle
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  website_description: prismic.KeyTextField;
+  website_subtitle: prismic.KeyTextField;
+
+  /**
+   * Website Description field in *CardItems → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card_items.items[].website_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  website_description: prismic.RichTextField;
 }
 
 /**
@@ -804,58 +952,68 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
- * Primary content in *TextBlock → Default → Primary*
+ * Primary content in *PrivacyPolicy → Default → Primary*
  */
-export interface TextBlockSliceDefaultPrimary {
+export interface PrivacyPolicySliceDefaultPrimary {
   /**
-   * Privacy Policy field in *TextBlock → Default → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.default.primary.privacy_policy
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  privacy_policy: prismic.RichTextField;
-
-  /**
-   * Privacy Policy Heading field in *TextBlock → Default → Primary*
+   * Privacy Policy Heading field in *PrivacyPolicy → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: text_block.default.primary.privacy_policy_heading
+   * - **API ID Path**: privacy_policy.default.primary.privacy_policy_heading
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   privacy_policy_heading: prismic.KeyTextField;
+
+  /**
+   * Last Updated On field in *PrivacyPolicy → Default → Primary*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.default.primary.last_updated_on
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  last_updated_on: prismic.DateField;
+
+  /**
+   * Privacy Policy Text field in *PrivacyPolicy → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: privacy_policy.default.primary.privacy_policy_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  privacy_policy_text: prismic.RichTextField;
 }
 
 /**
- * Default variation for TextBlock Slice
+ * Default variation for PrivacyPolicy Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TextBlockSliceDefault = prismic.SharedSliceVariation<
+export type PrivacyPolicySliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<TextBlockSliceDefaultPrimary>,
+  Simplify<PrivacyPolicySliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *TextBlock*
+ * Slice variation for *PrivacyPolicy*
  */
-type TextBlockSliceVariation = TextBlockSliceDefault;
+type PrivacyPolicySliceVariation = PrivacyPolicySliceDefault;
 
 /**
- * TextBlock Shared Slice
+ * PrivacyPolicy Shared Slice
  *
- * - **API ID**: `text_block`
- * - **Description**: TextBlock
+ * - **API ID**: `privacy_policy`
+ * - **Description**: PrivacyPolicy
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type TextBlockSlice = prismic.SharedSlice<
-  "text_block",
-  TextBlockSliceVariation
+export type PrivacyPolicySlice = prismic.SharedSlice<
+  "privacy_policy",
+  PrivacyPolicySliceVariation
 >;
 
 declare module "@prismicio/client" {
@@ -880,9 +1038,15 @@ declare module "@prismicio/client" {
       HomepageDocumentDataSlicesSlice,
       NavbarDocument,
       NavbarDocumentData,
+      PageDocument,
+      PageDocumentData,
+      PageDocumentDataSlicesSlice,
       PrivacyPolicyDocument,
       PrivacyPolicyDocumentData,
       PrivacyPolicyDocumentDataSlicesSlice,
+      WebsiteDocument,
+      WebsiteDocumentData,
+      WebsiteDocumentDataSlicesSlice,
       AllDocumentTypes,
       AboutSlice,
       AboutSliceDefaultPrimary,
@@ -899,10 +1063,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultItem,
       HeroSliceVariation,
       HeroSliceDefault,
-      TextBlockSlice,
-      TextBlockSliceDefaultPrimary,
-      TextBlockSliceVariation,
-      TextBlockSliceDefault,
+      PrivacyPolicySlice,
+      PrivacyPolicySliceDefaultPrimary,
+      PrivacyPolicySliceVariation,
+      PrivacyPolicySliceDefault,
     };
   }
 }

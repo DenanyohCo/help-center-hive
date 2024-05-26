@@ -1,0 +1,42 @@
+{
+  "id": "privacy_policy",
+  "type": "SharedSlice",
+  "name": "PrivacyPolicy",
+  "description": "PrivacyPolicy",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "privacy_policy_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Privacy Policy Heading",
+            "placeholder": ""
+          }
+        },
+        "last_updated_on": {
+          "type": "Date",
+          "config": {
+            "label": "Last Updated On",
+            "placeholder": ""
+          }
+        },
+        "privacy_policy_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Privacy Policy Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

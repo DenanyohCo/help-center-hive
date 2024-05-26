@@ -1,0 +1,35 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"last_updated_on": {
+				"__TYPE__": "FieldContent",
+				"type": "Date",
+				"value": "2018-08-25"
+			},
+			"privacy_policy_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cupidatat consequat eu ut. Cillum pariatur aute Lorem dolore aliqua esse aute irure proident aute consequat labore. Ipsum ut elit enim."
+						}
+					}
+				]
+			},
+			"privacy_policy_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "hit",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]
