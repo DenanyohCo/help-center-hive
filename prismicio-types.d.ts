@@ -513,7 +513,7 @@ export type PrivacyPolicyDocument<Lang extends string = string> =
     Lang
   >;
 
-type WebsiteDocumentDataSlicesSlice = CardItemsSlice;
+type WebsiteDocumentDataSlicesSlice = WebsiteSlice;
 
 /**
  * Content for Website documents
@@ -1016,6 +1016,136 @@ export type PrivacyPolicySlice = prismic.SharedSlice<
   PrivacyPolicySliceVariation
 >;
 
+/**
+ * Primary content in *Website → Default → Primary*
+ */
+export interface WebsiteSliceDefaultPrimary {
+  /**
+   * Website Description field in *Website → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.default.primary.website_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  website_description: prismic.RichTextField;
+
+  /**
+   * Website Title field in *Website → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.default.primary.website_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  website_title: prismic.KeyTextField;
+
+  /**
+   * Website Link field in *Website → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.default.primary.website_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  website_link: prismic.LinkField;
+
+  /**
+   * Website Image field in *Website → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.default.primary.website_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  website_image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Website → Items*
+ */
+export interface WebsiteSliceDefaultItem {
+  /**
+   * Page Link field in *Website → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.items[].page_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  page_link: prismic.LinkField;
+
+  /**
+   * Heading field in *Website → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.items[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Subheading field in *Website → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.items[].subheading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subheading: prismic.KeyTextField;
+
+  /**
+   * Image field in *Website → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Link field in *Website → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for Website Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WebsiteSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<WebsiteSliceDefaultPrimary>,
+  Simplify<WebsiteSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Website*
+ */
+type WebsiteSliceVariation = WebsiteSliceDefault;
+
+/**
+ * Website Shared Slice
+ *
+ * - **API ID**: `website`
+ * - **Description**: Website
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WebsiteSlice = prismic.SharedSlice<
+  "website",
+  WebsiteSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1067,6 +1197,11 @@ declare module "@prismicio/client" {
       PrivacyPolicySliceDefaultPrimary,
       PrivacyPolicySliceVariation,
       PrivacyPolicySliceDefault,
+      WebsiteSlice,
+      WebsiteSliceDefaultPrimary,
+      WebsiteSliceDefaultItem,
+      WebsiteSliceVariation,
+      WebsiteSliceDefault,
     };
   }
 }

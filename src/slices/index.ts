@@ -7,4 +7,5 @@ export const components = {
   card_items: dynamic(() => import("./CardItems")),
   hero: dynamic(() => import("./Hero")),
   privacy_policy: dynamic(() => import("./PrivacyPolicy")),
+  website: dynamic(() => import("./Website")),
 };

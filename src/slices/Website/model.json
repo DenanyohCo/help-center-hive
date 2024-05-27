@@ -1,0 +1,90 @@
+{
+  "id": "website",
+  "type": "SharedSlice",
+  "name": "Website",
+  "description": "Website",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "website_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Website Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "website_title": {
+          "type": "Text",
+          "config": {
+            "label": "Website Title",
+            "placeholder": ""
+          }
+        },
+        "website_link": {
+          "type": "Link",
+          "config": {
+            "label": "Website Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "website_image": {
+          "type": "Image",
+          "config": {
+            "label": "Website Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "page_link": {
+          "type": "Link",
+          "config": {
+            "label": "Page Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "subheading": {
+          "type": "Text",
+          "config": {
+            "label": "Subheading",
+            "placeholder": ""
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "link": {
+          "type": "Link",
+          "config": {
+            "label": "Link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

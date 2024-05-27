@@ -17,7 +17,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "card_items": {
+            "website": {
               "type": "SharedSlice"
             }
           }
