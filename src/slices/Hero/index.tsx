@@ -16,7 +16,6 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="py-8 min-h-screen"
     >
       <div className="container mx-auto flex flex-col items-center py-20 text-center">
         <div className="mx-auto max-w-5xl md:w-[680px]">

@@ -24,7 +24,7 @@ const CardItems = ({ slice }: CardItemsProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="container mb-40 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+      <div className="container py-2 grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {slice.items.map(
           (item, index) => (
             <div key={index}>
@@ -67,7 +67,7 @@ const CardItems = ({ slice }: CardItemsProps): JSX.Element => {
           )
         )}
       </div>
-      <div className="col-span-full row-span-2 my-4">
+      <div className="col-span-full row-span-2 my-4 mb-12">
         {slice.variation === "default" && <NewsletterCTA />}
       </div>
     </section>

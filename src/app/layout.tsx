@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx(fontSans.className)}>
       <body className=
-        {cn("min-h-screen overscroll-none bg-background font-sans antialiased", fontSans.variable)}
+        {cn("container min-h-screen overscroll-none bg-background font-sans antialiased", fontSans.variable)}
       >
         <Header />
         {children}

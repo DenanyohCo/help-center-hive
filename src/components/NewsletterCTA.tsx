@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 
 const NewsletterCTA = () => {
     return (
-        <section className="container mx-4">
+        <section className="mx-4">
             <div className="grid grid-cols-1 items-center gap-x-8 gap-y-12 border-y py-8 md:grid-cols-2 lg:grid-cols-2">
                 <div className="relative mx-auto flex max-w-lg flex-col items-center justify-center md:mx-0 md:items-start">
                     <h2 className="mb-2 text-3xl font-semibold text-gray-950 ">

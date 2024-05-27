@@ -1,25 +1,42 @@
-import { usePathname } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import { MdArrowBackIos } from "react-icons/md";
-import { PiArrowSquareOutFill } from "react-icons/pi";
-import React, { useEffect } from "react";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { SliceZone } from "@prismicio/react";
 
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
-const SitePage = () => {
-    return (
-        <section className="container">
-            <Link href={"/"} className="flex items-center py-4">
-                <MdArrowBackIos /> See All Inspiration
-            </Link>
-        </section>
-    );
-};
+import { createClient } from "@/prismicio";
+import { components } from "@/slices";
 
-export default SitePage;
+type Params = { uid: string };
+
+export default async function Page({ params }: { params: Params }) {
+    const client = createClient();
+    const page = await client
+        .getByUID("website", params.uid)
+        .catch(() => notFound());
+
+    return <SliceZone slices={page.data.slices} components={components} />;
+}
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Params;
+}): Promise<Metadata> {
+    const client = createClient();
+    const page = await client
+        .getByUID("website", params.uid)
+        .catch(() => notFound());
+
+    return {
+        title: page.data.meta_title,
+        description: page.data.meta_description,
+    };
+}
+
+export async function generateStaticParams() {
+    const client = createClient();
+    const pages = await client.getAllByType("website");
+
+    return pages.map((page) => {
+        return { uid: page.uid };
+    });
+}

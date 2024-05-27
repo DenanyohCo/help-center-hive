@@ -3,7 +3,6 @@ import { SliceComponentProps } from "@prismicio/react";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
 /**
  * Props for `About`.
  */
@@ -61,7 +60,7 @@ const About = ({ slice }: AboutProps): JSX.Element => {
               {slice.primary.story_content}
             </p>
           </div>
-          <div className="flex bg-[#EAD7AC] items-center flex-col justify-center my-4 py-12 px-4">
+          <div className="flex bg-[#EAD7AC] items-center flex-col justify-center my-4 py-12 px-4 w-screen">
             <div className="container flex flex-col justify-center items-center">
               <h2 className="mb-2 text-3xl font-semibold text-gray-950 ">
                 Get the latest inspiration, weekly.
