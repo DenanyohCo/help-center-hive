@@ -60,14 +60,6 @@ const Website = async ({ slice }: WebsiteProps): Promise<JSX.Element> => {
                 ))
               ))}
             </div>
-            {/* {website.fi.forEach((index, tag) => (
-                <div
-                  key={index}
-                  className="mr-2 rounded-lg bg-[#F6F1D1] p-0.5 px-2 text-xs"
-                >
-                  {tag}
-                </div>
-              ))} */}
           </div>
           <div className="my-2 hidden h-fit border-2 md:block">
             <div className="bg-[#F6F1D1] p-2 px-4 text-4xl font-bold">
