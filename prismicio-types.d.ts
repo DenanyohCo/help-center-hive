@@ -1059,6 +1059,16 @@ export interface WebsiteSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   website_image: prismic.ImageField<never>;
+
+  /**
+   * Tags field in *Website → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: website.default.primary.tags
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tags: prismic.KeyTextField;
 }
 
 /**

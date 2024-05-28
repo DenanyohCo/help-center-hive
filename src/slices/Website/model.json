@@ -43,6 +43,13 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "tags": {
+          "type": "Text",
+          "config": {
+            "label": "Tags",
+            "placeholder": ""
+          }
         }
       },
       "items": {

@@ -48,6 +48,11 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"tags": {
+				"__TYPE__": "FieldContent",
+				"value": "only",
+				"type": "Text"
 			}
 		},
 		"items": [

@@ -1,7 +1,6 @@
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { createClient } from "@/prismicio";
 import Link from "next/link";
 import { MdArrowBackIos } from "react-icons/md";
 import { PiArrowSquareOutFill } from "react-icons/pi";
@@ -16,16 +15,10 @@ import {
  * Props for `Website`.
  */
 export type WebsiteProps = SliceComponentProps<Content.WebsiteSlice>;
-
 /**
  * Component for "Website" Slices.
  */
-const Website = async ({ slice }: WebsiteProps): Promise<JSX.Element> => {
-  const client = createClient();
-  const pages = await client.getAllByType("website");
-  const website = pages.map((page) => {
-    return { uid: page.uid };
-  });
+const Website = ({ slice }: WebsiteProps): JSX.Element => {
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -52,15 +45,13 @@ const Website = async ({ slice }: WebsiteProps): Promise<JSX.Element> => {
               <PrismicRichText field={slice.primary.website_description} />
             </div>
             <div className="my-4 flex">
-              {pages.map((item, index) => (
-                item.tags.map((tag, tagIndex) => (
-                  <div
-                    key={index + "_" + tagIndex}
-                    className="mr-2 rounded-lg bg-[#F6F1D1] p-0.5 px-2 text-xs"
-                  >
-                    {tag}
-                  </div>
-                ))
+              {slice.primary.tags?.split(" ").map((tag, index) => (
+                <div
+                  key={index}
+                  className="mr-2 rounded-lg bg-[#F6F1D1] p-0.5 px-2 text-xs"
+                >
+                  {tag}
+                </div>
               ))}
             </div>
           </div>
