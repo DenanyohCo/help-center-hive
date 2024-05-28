@@ -22,7 +22,10 @@ export type WebsiteProps = SliceComponentProps<Content.WebsiteSlice>;
  */
 const Website = async ({ slice }: WebsiteProps): Promise<JSX.Element> => {
   const client = createClient();
-  const website = await client.getAllByType("website");
+  const pages = await client.getAllByType("website");
+  const website = pages.map((page) => {
+    return { uid: page.uid };
+  });
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -49,10 +52,10 @@ const Website = async ({ slice }: WebsiteProps): Promise<JSX.Element> => {
               <PrismicRichText field={slice.primary.website_description} />
             </div>
             <div className="my-4 flex">
-              {website.map((tag) => (
-                tag.tags.map((tag, index) => (
+              {pages.map((item, index) => (
+                item.tags.map((tag, tagIndex) => (
                   <div
-                    key={index}
+                    key={index + "_" + tagIndex}
                     className="mr-2 rounded-lg bg-[#F6F1D1] p-0.5 px-2 text-xs"
                   >
                     {tag}
